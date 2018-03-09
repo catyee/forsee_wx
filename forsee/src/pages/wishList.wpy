@@ -1,38 +1,59 @@
-<style lang="less"> // script template style都支持lang和src属性 lang决定了其代码编译过程 src决定是否外联代码，存在src属性且有效时，会忽略内联带啊没
+<style lang="less">
+// script template style都支持lang和src属性 lang决定了其代码编译过程 src决定是否外联代码，存在src属性且有效时，会忽略内联带啊没
 .color-pink {
-  color: palevioletred
+  color: palevioletred;
 }
 
-.container-bg{
+.container-bg {
   background: #eeeeee;
 }
-
+.header {
+  width: 100%;
+  background-color: #fff;
+}
+.nav-tab {
+  display: flex;
+  justify-content: center;
+  .nav-item {
+    padding: 20rpx 6rpx;
+  }
+  .active-nav {
+    border-bottom: 8rpx solid #a5a9c6;
+  }
+  .nav-item:nth-child(1) {
+    margin-right: 100rpx;
+  }
+}
+.height60 {
+  height: 60rpx;
+  width: 100%;
+}
 </style>
 <template>
   <view class="container">
-    <listheader></listheader>
+    <view class="header">
+      <view class="nav-tab">
+        <view class="nav-item active-nav">going</view>
+        <view class="nav-item">done</view>
+      </view>
+    </view>
+     <view class="height60"></view>
+     <view></view>
   </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import ListHeader from '../components/listheader'
-  export default class WishList extends wepy.page {
-    config = {
-      navigationBarTitleText: 'wish list',
-    }
-    components = {
-      listheader: ListHeader
-    }
-    data = {}
-    methods = {
+import wepy from 'wepy';
+export default class WishList extends wepy.page {
+  config = {
+    navigationBarTitleText: 'wish list'
+  };
+  components = {};
+  data = {};
+  methods = {};
 
-    }
-
- 
-
-    onLoad() {
-     console.log('wish list')
-    }
+  onLoad() {
+    console.log('wish list');
   }
+}
 </script>

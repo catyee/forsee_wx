@@ -1,20 +1,12 @@
 <style lang="less">
-    .header{
-        width:750rpx;
-        height:50rpx;
-        box-shadow: 2rpx 0rpx 10rpx 5rpx rgba(0,0,0,0.2);
-    }
+
 </style>
 <template>
-  <view class="header">
-
-  </view>
+ 
 </template>
 <script>
-  import wepy from 'wepy'
-  export default class ListHeader extends wepy.component{
-
-  }
+import wepy from 'wepy';
+export default class ListHeader extends wepy.component {}
 </script>
 
 
