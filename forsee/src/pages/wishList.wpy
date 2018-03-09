@@ -1,0 +1,38 @@
+<style lang="less"> // script template style都支持lang和src属性 lang决定了其代码编译过程 src决定是否外联代码，存在src属性且有效时，会忽略内联带啊没
+.color-pink {
+  color: palevioletred
+}
+
+.container-bg{
+  background: #eeeeee;
+}
+
+</style>
+<template>
+  <view class="container">
+    <listheader></listheader>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import ListHeader from '../components/listheader'
+  export default class WishList extends wepy.page {
+    config = {
+      navigationBarTitleText: 'wish list',
+    }
+    components = {
+      listheader: ListHeader
+    }
+    data = {}
+    methods = {
+
+    }
+
+ 
+
+    onLoad() {
+     console.log('wish list')
+    }
+  }
+</script>
