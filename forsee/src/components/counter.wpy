@@ -28,14 +28,17 @@
     props = {
       num: {
         type: [Number, String],
+        // todo 这里啥意思
         coerce: function (v) {
+          console.log(+v,'vvvvvvvvvvvvvvvvvvvvv ')
           return +v
         },
-        default: 50
+        default: 30
       }
     }
 
     data = {
+      
     }
     events = {
       'index-broadcast': (...args) => {
@@ -53,6 +56,7 @@
     methods = {
       plus () {
         this.num = this.num + 1
+        // $name获取当前组件实例的id(名字)
         console.log(this.$name + ' plus tap')
 
         this.$emit('index-emit', 1, 2, 3)

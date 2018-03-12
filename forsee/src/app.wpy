@@ -8,11 +8,16 @@
   box-sizing: border-box;
 }
 // 修改各个页面的背景色
-page {  
-  display: block;  
-  min-height: 100%;  
-  background-color: #9999a3b0;  
-}  
+// page {
+//   display: block;
+//   min-height: 100%;
+//   background-color: #9999a3b0;
+// }
+
+.height60 {
+  height: 60rpx;
+  width: 100%;
+}
 </style>
 
 <script>
@@ -23,7 +28,7 @@ import 'wepy-async-function';
 
 export default class extends wepy.app {
   config = {
-    pages: ['pages/wishList', 'pages/index'],
+    pages: ['pages/test','pages/index','pages/wishList' ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: 'white',

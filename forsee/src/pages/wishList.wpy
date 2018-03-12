@@ -24,10 +24,7 @@
     margin-right: 100rpx;
   }
 }
-.height60 {
-  height: 60rpx;
-  width: 100%;
-}
+
 </style>
 <template>
   <view class="container">
@@ -38,7 +35,9 @@
       </view>
     </view>
      <view class="height60"></view>
-     <view></view>
+     <view class="list-container">
+       <view class="wish-item"></view>
+     </view>
   </view>
 </template>
 
