@@ -26,7 +26,7 @@
 
       <text class="info">{{normalTitle}}</text>
       <text class="info">{{setTimeoutTitle}}</text>
-      <text class="info">{{test}}</text>
+      <text class="info">{{mixin}}</text>
       <text class="info">{{mynum}}</text>
       <!-- <text class="info">{{now}}</text> -->
       <button @tap="plus('a')" size="mini">  +  </button>
@@ -50,16 +50,17 @@
 
       <text class="testcounter">计数组件1: </text>
       <view class="counterview">
+        <!-- .user修饰符为自定义组件绑定事件 -->
         <counter1 @index-emit.user="counterEmit" />
       </view>
 
       <text class="testcounter">计数组件2: </text>
 
       <!-- .sync修饰符来实现父组件数据绑定至子组件的效果 -->
-      <view class="counterview">
+      <!-- <view class="counterview">
           
         <counter22 :num.sync="mynum"></counter2>
-      </view>
+      </view> -->
     </panel>
 
     <!-- <panel>
@@ -88,7 +89,7 @@
   import Toast from 'wepy-com-toast'
   import testMixin from '../mixins/test'
 
-  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+  //console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
 
 
   export default class Test1 extends wepy.page {
@@ -207,20 +208,21 @@
     //       })
     //     }
     //   },
-    //   counterEmit (...args) {
-    //     let $event = args[args.length - 1]
-    //     console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
-    //   }
+      counterEmit (...args) {
+        let $event = args[args.length - 1]
+        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}111`)
+      }
     }
 
     events = { // wpy组件事件处理函数对象，存放响应组件之间通过$broadcast,$emit,$invoke,所传递的事件的函数
       'index-emit': (...args) => {
+        console.log(args,'args')
         let $event = args[args.length - 1]
-        console.log($event,'event')
-        console.log(this.$name,'namename') // 当前组件的名字
-        console.log($event.name,'eventname') // 当前事件的名字
-        console.log($event.source,'source') // 事件的发送来源
-        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}`)
+        // console.log($event,'event')
+        // console.log(this.$name,'namename') // 当前组件的名字
+        // console.log($event.name,'eventname') // 当前事件的名字
+        // console.log($event.source,'source') // 事件的发送来源
+        console.log(`${this.$name} receive ${$event.name} from ${$event.source.$name}222`)
       }
     }
 

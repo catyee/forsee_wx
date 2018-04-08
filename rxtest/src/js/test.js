@@ -45,3 +45,5 @@ const reduceArray = testArray.reduce((total,item) => {
     return total * item *2;
 })
 console.log(reduceArray,'zzzzzzzzzzz')
+let keys = Object.keys(testArray);
+console.log(keys,'keys')
