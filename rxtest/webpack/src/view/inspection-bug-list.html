@@ -1,0 +1,54 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ" id="page-privilege">
+<header class="header">
+	<div class="row">
+		<div class="total paddingR40">共搜索到
+			<span class="color-danger" id="total"></span>个巡检问题</div>
+		<div class="width24">
+			<div class="ui-btn-group ui-btn-group-primary" id="status-selector">
+				<button class="width25 ui-btn" value="-1">全部</button>
+				<button class="width25 ui-btn active" value="0">未处理</button>
+				<button class="width25 ui-btn " value="1">处理中</button>
+				<button class="width25 ui-btn " value="2">已处理</button>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="content conPadding1">
+	<div class="bg-white">
+		<div class="table-striped" id="bug-list-panel">
+			<div class="bug-list-table">
+				<table class="table-content" id="bug-list">
+					<thead>
+						<tr class="table-header">
+							<td class="width12">提交时间</td>
+							<td class="width43">问题描述</td>
+							<td class="width10">问题等级</td>
+							<td class="width15">配电室名称</td>
+							<td class="width10">状态</td>
+							<td class="width10">巡检组长</td>
+						</tr>
+					</thead>
+					<tbody id="bug-list-body">
+
+					</tbody>
+				</table>
+			</div>
+
+			<div class="height30"></div>
+			<nav class="center">
+				<ul class="pagination" id="pagination"></ul>
+			</nav>
+		</div>
+		<div class="empty-tips" id="unhandle-empty-tips" style="padding-top:120px">
+			<i class="iconfont">&#xe622;</i>
+			<div>系统中没有未派单的巡检问题</div>
+			<div>这不是bug</div>
+			<div>这表示系统您的配电室很安全</div>
+		</div>
+		<div class="empty-tips" id="handled-empty-tips" style="padding-top:120px">
+			<i class="iconfont">&#xe622;</i>
+			<div>系统中没有已派单的巡检问题</div>
+		</div>
+
+	</div>
+</div>

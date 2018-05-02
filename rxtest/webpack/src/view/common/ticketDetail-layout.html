@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" type="text/css" href="//cdn.dianwutong.com/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.dianwutong.com/common/css/iconfont.css" />
+    <link rel="stylesheet" href="//cdn.dianwutong.com/vendor/jquery_confirm/jquery-confirm.css"/>
+    <link rel="stylesheet" href="//cdn.dianwutong.com/vendor/fancybox//jquery.fancybox.css"/>
+    <link rel="stylesheet" href="//cdn.dianwutong.com/vendor/wangEditor/css/wangEditor.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="//cdn.dianwutong.com/vendor/html5shiv_min.js"></script>
+	<script src="//cdn.dianwutong.com/vendor/respond_min.js"></script>
+	<![endif]-->
+    <style>
+        body {
+            opacity: 0
+        }
+
+        .user-info>a:link {
+            color: #b2e0cb;
+        }
+
+        .user-info>a:active {
+            color: #b2e0cb;
+        }
+
+        .user-info>a:visited {
+            color: #b2e0cb;
+        }
+
+        .user-info>a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fuild row1">
+        <div class="container" style="padding:0;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="font-family:微软雅黑;font-size:20px;color:white;line-height:40px;">配电室智能化监管系统</div>
+                </div>
+                <div class="col-md-8 text-align-r user-info">
+                    <a href="map.html#area" class="map">
+                        <i class="iconfont font20" style="margin-right:6px;">&#xe609;</i>地图
+                    </a>
+
+                    <a href="#" class="list" id="direct-send-order">
+                        <i class="iconfont font20" style="margin-right:6px;">&#xe60c;</i>直接派单
+                    </a>
+                    <a href="javascript:;" class="admin">
+                        <i class="iconfont font20" style="margin-right:6px;">&#xe60e;</i>
+                        <span id="user-name"></span>
+                    </a>
+                    <a href="javascript:;" id="logout-button" class="login">
+                        <i class="iconfont font20" style="margin-right:6px;">&#xe603;</i>退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fuild box-shadow">
+        <div class="container" style="padding:0;">
+            <div class="row nav-container">
+                <div class="col-md-3 logo-container">
+                    <a href="#">
+                        <img src="//cdn.dianwutong.com/ems/home/img/iems.png" width="100%">
+                    </a>
+                </div>
+                <div class="col-md-9">
+                    <ul class="header-nav" id="header-nav">
+                        <li class="power-room-list">
+                            <a href="power-room-list.html">&nbsp;配电室&nbsp;</a>
+                        </li>
+                        <li class="repairing-list">
+                            <a href="repairing-list.html">正在解决</a>
+                        </li>
+
+                        <li class="system-warning">
+                            <a href="system-warning.html">正在报警</a>
+                        </li>
+
+                        <li class="inspection-bug-list">
+                            <a href="inspection-bug-list.html">巡检问题</a>
+                        </li>
+
+                        <li class="inspection-arange-list">
+                            <a href="inspection-arrange-list.html">巡检安排</a>
+                        </li>
+
+                        <li class="repair-log-list">
+                            <a href="repair-log-list.html">抢修日志</a>
+                        </li>
+
+                        <li class="inspection-log-list">
+                            <a href="inspection-log-list.html">巡检日志</a>
+                        </li>
+
+                        <!-- 
+                        <li class="work-report">
+                            <a href="work-report-list.html">工作汇报</a>
+                        </li> -->
+
+                        <li class="operation-ticket">
+                            <a href="operation-order-list.html">操作票</a>
+                        </li>
+
+                        <li class="middle work-order">
+                            <a href="work-order-list.html">工作票</a>
+                        </li>
+                        <li class="alarm-monitor">
+                            <a href="alarm-monitor.html">报警监控</a>
+                        </li>
+                        <li class="system-sign">
+                            <a href="system-sign.html">系统挂牌</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="height8"></div>
+    {{content}}
+    <!-- foot -->
+    <div class="height110"></div>
+    <div class="foot box-shadow text-align-c">
+        <ul style="display:inline-block;margin-bottom:0;">
+            <li class="foot1">
+                <a href="#">电务通 APP
+                    <img alt="" src="//cdn.dianwutong.com/ems/home/img/NEW.png" style="margin-top:-5px">
+                </a>
+            </li>
+            <li class="foot1">
+                <a href="#">版本更新 v2.0.0</a>
+            </li>
+            <li class="foot1">
+                <a href="#">技术中心</a>
+            </li>
+            <li class="foot1">
+                <a href="#">联系我们</a>
+            </li>
+            <li class="foot1">
+                <a href="#">在线交流</a>
+            </li>
+            <li class="foot1">
+                <a href="#">合作伙伴 中港世能有限公司</a>
+            </li>
+        </ul>
+        <div style="color:white;filter:alpha(opacity=70);
+      -moz-opacity:0.7;  
+      -khtml-opacity: 0.7;  
+      opacity: 0.7;font-size:12px">Copyright &copy;2015-2017 北京电务通能源股份有限公司 </div>
+    </div>
+
+    <!-- 退出登录对话框  -->
+    <div class="modal fade" tabindex="-1" id="logout-confirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">系统提示</div>
+                <div class="modal-body">是否继续退出系统？</div>
+                <div class="modal-footer">
+                    <span class="btn btn-default" data-dismiss="modal">取消</span>
+                    <span class="btn btn-success bg-color-green-b" id="logout-confirm-button">继续</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 直接派单 -->
+    <div class="modal fade" tabindex="-1" id="direct-send-order-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">直接派单</div>
+                <div class="modal-body">
+                    <div class="height10"></div>
+                    <div class="row">
+
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-10 text-align-l">配电室</div>
+                        <div class="col-md-1 "></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-10">
+                            <select class="form-control" id="modal-direct-send-order-power-room"></select>
+                        </div>
+                        <div class="col-md-1 "></div>
+                    </div>
+                    <div class="row">
+                        <div class="height10"></div>
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-10 text-align-l">问题描述 ( *请在描述中标注调度号 ) </div>
+                        <div class="col-md-1 "></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1 "></div>
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="5" id="modal-direct-send-order-desc"></textarea>
+                        </div>
+                        <div class="col-md-1 "></div>
+                        <div class="height20"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="btn  btn-default" data-dismiss="modal">取消</span>
+                    <span class="btn  btn-success  bg-color-green-b" id="direct-send-order-btn">确定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="http://cdn.bootcss.com/rxjs/5.2.0/Rx.min.js"></script>
+    <script src="//cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/jquery.min.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/jquery.cookie.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="//cdn.dianwutong.com/common/js/dateUtils.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/jquery_confirm/jquery-confirm.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/html2canvas.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/ajaxupload.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/fancybox/jquery.fancybox.js"></script>
+    <script src="//cdn.dianwutong.com/vendor/wangEditor/js/wangEditor.js"></script>
+
+</body>
+
+</html>

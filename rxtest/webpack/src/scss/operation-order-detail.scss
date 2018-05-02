@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+@import "./common/common";
+
+.main{
+	display: flex;
+}
+.left-con{
+	width: 66.7%;
+	box-sizing: border-box;
+	min-width: 1010px;
+	.left-top{
+		box-sizing: border-box;
+		height: 50px;
+		line-height: 50px;
+		padding:0 20px;
+	}
+	.editor-content{
+		padding:30px 50px;
+
+		.wangEditor-container{
+			width: 910px;
+			margin: auto;
+			.wangEditor-txt{
+				min-height:600px;
+			}
+		}
+
+	}
+}
+.right-con{
+	margin-left: 2%;
+	width: 31.3%;
+	.right-top{
+		height: 50px;
+		line-height: 50px;
+		padding:0 40px;
+		font-size: 16px;
+	}
+	.right-content{
+		box-sizing: border-box;
+		height: 326px;
+		padding:50px 40px;
+		div{
+			font-size: 14px;
+			padding-bottom: 10px;
+			span:nth-child(1){
+				color: #5a5a5a;
+			}
+		}
+	}
+}

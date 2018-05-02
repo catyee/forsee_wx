@@ -1,0 +1,76 @@
+<div class="container  wrap">
+    <div class="row ">
+        <div class="col-md-12 right ">
+            <div class="shu"></div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid #bed5c3;">
+                <div class="q">配电室报警信息</div>
+            </div>
+            <div class="height25"></div>
+            <div class="">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr class="tr-bg-grey">
+                            <th class="pointer text-align-c">&nbsp;&nbsp;</th>
+                            <th>配电室</th>
+                            <th>调度号</th>
+                            <th>报警描述</th>
+                            <th>报警值</th>
+                            <th>报警时间</th>
+                            <th>类型</th>
+                            <th>处理信息</th>
+                            <th>抢修人电话</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alarm-items-con">
+                        <!-- <tr class="alarm-item">
+                            <td class="text-center">
+                                <input type="checkbox">
+                            </td>
+                            <td>敦豪配电室</td <td>1-6-6</td>
+                            <td>变配电室应急照明 B相电缆接头超温</td>
+                            <td>35.2</td>
+                            <td>05-07 15:35:23</td>
+                            <td>紧急报警</td>
+                            <td>未处理</td>
+                            <td>19937926682(孙德龙)</td>
+
+                        </tr> -->
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="height30">
+            </div>
+            <div class="form">
+                <div class="form-group ">
+                    <!-- <button class="confirm-alarm btn btn-success">报警确认</button> -->
+                    <button class="remove-alarm btn bg-yellow" style="color: white" id="removeAlarm">清除已处理报警</button>
+                </div>
+            </div>
+            <div class="height100"></div>
+            <div class="text-align-c">
+                <nav id="pagination" class="pagination"></nav>
+            </div>
+        </div>
+        <div class="height100"></div>
+    </div>
+
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">您确定删除报警信息吗</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="color: black">关闭</button>
+                <button type="button" class="btn btn-danger" id="remove">确定删除</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>

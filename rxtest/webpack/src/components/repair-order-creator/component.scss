@@ -1,0 +1,21 @@
+
+.dialog > .dialog-content{
+    width:600px;
+    .bug-desc{
+        width: 100%;
+        height: 120px;
+    }
+
+    #create-repair-order-pr-select{
+        width:493px;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        z-index: 9999;
+    }
+
+    textarea{
+        padding:10px;
+        box-sizing: border-box;
+    }
+}

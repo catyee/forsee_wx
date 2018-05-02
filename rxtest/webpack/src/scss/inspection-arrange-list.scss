@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+@import "./common/common";
+header{
+    .row div:nth-child(1){
+        height: 30px;
+        line-height: 30px;
+        margin-right: 40px;
+    }
+}
+
+.date-range-con{
+    height:32px;
+    border:1px solid #bababa;
+    padding:0px 5px;
+    user-select: none;
+    &>input{
+        border:none;
+        outline: none;
+        width:200px;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+        line-height: 32px;
+        height:32px;
+    }
+
+    &>span{
+        line-height: 32px;
+        height:32px;
+        vertical-align: middle;
+        color: #999;
+        cursor: pointer;
+        font-size: 24px;
+        display: inline-block;
+        &:hover{
+            color: #e9be2b;
+        }
+
+        &:first-child{
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+    }
+}
+
+.arrange-list .arrange-item:nth-child(odd){
+     margin-right: 10%;
+}
+.arrange-list{
+    display: flex;
+    flex-wrap: wrap;
+    .bg-grey{
+        background: #e5e5e5;
+    }
+    .arrange-item{
+        cursor: pointer;
+        width: 45%;
+        box-sizing: border-box;
+        box-shadow: 1px 5px 4px -2px  $shadow_color;
+        margin-bottom: 28px;
+        .item-header{
+            box-sizing: border-box;
+            padding:0 30px; 
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .item-content{
+            box-sizing: border-box;
+            padding: 0 5%;
+            width: 100%;
+            height: 133px;
+            font-size: 14px;
+            background-color: #fff;
+            .group{
+                display: flex;
+                color: $content_deep_color;
+                div{
+                    width: 25%;
+                    text-align: left;
+                    padding-top: 19px;
+                   
+                }
+            }
+        }
+        
+    }
+    .no-arrange{
+        .item-header{
+            div:nth-child(2){
+                color: $content_deep_color;
+            }
+        } 
+        .item-content{
+            line-height: 133px;
+            color: $black_color;
+            text-align: center;
+            span{
+                color: $primary_color;
+                cursor: pointer;
+            }
+        }
+    }
+}

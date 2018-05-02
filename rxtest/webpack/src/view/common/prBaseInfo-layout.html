@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" type="text/css" href="//cdn.dianwutong.com/common/css/iconfont.css" />
+    <script type="text/javascript" src="build/dev/vendor.dll.js"></script>
+</head>
+
+<body >
+    <div class="row">
+        <div class="nav-list">
+            <div class="height5"></div>.
+            <div class="logo">
+                <img src="//cdn.dianwutong.com/ems/image/logo.png">
+            </div>
+            <div class="height40"></div>
+            <div class="nav-content">
+                <div class="pr-item">
+                    <a class="nav-item  color-grey" href="power-room-list.html" privilege="QXBZ,QXZZ,ZBZ,XJZZ,ZTZ,AQY">
+                        <i class="iconfont icon icon-bg-peidianshi">&#xe614;</i>
+                        <span>配电室</span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                        <div class="badge" id="power-room-badge"></div>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="warning-item " privilege="QXBZ,ZBZ,ZTZ">
+                    <a class="nav-item  color-grey" href="system-warning.html">
+                        <i class="iconfont icon icon-bg-zhengzaibaojing">&#xe61f;</i>
+                        <span>报警查询</span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                        <div class="badge" id="alarm-badge"></div>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="inspect-bug-item" privilege="QXBZ,ZBZ,ZTZ"> 
+                    <a class="nav-item  color-grey" href="inspection-bug-list.html">
+                        <i class="iconfont icon icon-bg-xunjianwenti">&#xe61e;</i>
+                        <span>巡检问题</span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                        <div class="badge" id="inspection-bug-badge"></div>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="inspect-arrange-item" privilege="ZTZ">
+                    <a class="nav-item color-grey" href="inspection-arrange-list.html">
+                        <i class="iconfont icon icon-bg-xunjiananpai">&#xe61c;</i>
+                        <span>巡检安排</span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="repair-log-item" privilege="QXBZ,ZTZ,ZBZ">
+                    <a class="nav-item color-grey" href="repair-log-list.html">
+                        <i class="iconfont icon icon-bg-qiangxiurizhi">&#xe619;</i>
+                        <span>抢修日志 </span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="inspect-log-item" privilege="QXBZ,ZTZ,ZBZ">
+                    <a class="nav-item color-grey" href="inspection-log-list.html">
+                        <i class="iconfont icon icon-bg-xunjianrizhi">&#xe61d;</i>
+                        <span>巡检日志</span>
+                        <i class="iconfont arrow">&#xe61a;</i>
+                    </a>
+                    <div class="height20"></div>
+                </div>
+                <div class="repair-list-item" privilege="QXBZ,ZTZ,ZBZ">
+                        <a class="nav-item  color-grey" href="repairing-list.html">
+                            <i class="iconfont icon icon-bg-qiangxiudan">&#xe618;</i>
+                            <span>抢修单</span>
+                            <i class="iconfont arrow">&#xe61a;</i>
+                            <div class="badge" id="repair-order-badge"></div>
+                        </a>
+                        <div class="height20"></div>
+                    </div>
+    
+                    <!-- 
+    
+                    <div class="oper-item" privilege="ZBZ,ZTZ,XJZZ,AQY">
+                        <a class="nav-item  color-grey" href="operation-order-list.html">
+                            <i class="iconfont icon icon-bg-caozuopiao">&#xe612;</i>
+                            <span>操作票</span>
+                            <i class="iconfont arrow">&#xe61a;</i>
+                            <div class="badge" id="operation-ticket-badge"></div>
+                        </a>
+                        <div class="height20"></div>
+                    </div>
+    
+    
+                    <div class="work-item" privilege="QXBZ,ZBZ,ZTZ,QXZZ,AQY">
+                        <a class="nav-item  color-grey" href="work-order-list.html">
+                            <i class="iconfont icon icon-bg-gongzuopiao">&#xe613;</i>
+                            <span>工作票</span> 
+                            <i class="iconfont arrow">&#xe61a;</i>
+                            <div class="badge" id="work-ticket-badge"></div>
+                        </a>
+                        <div class="height20"></div>
+                    </div>
+                    
+    
+                    <div class="system-sign-item" privilege="ZTZ">
+                        <a class="nav-item  color-grey" href="system-sign.html">
+                            <i class="iconfont icon icon-bg-xitongguapai">&#xe61b;</i>
+                            <span>系统挂牌</span>
+                            <i class="iconfont arrow">&#xe61a;</i>
+                        </a>
+                        <div class="height20"></div>
+                    </div> -->
+
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-header bg-primary ">
+                <div class="width70 left font22">配电室智能化监管系统</div>
+                <div class="width30 right pointer user-name" tabindex="-1">
+                    <i class="iconfont">&#xe609;</i>
+                    <span class="font16" id="user-name">个人中心</span>
+                    <i class="iconfont">&#xe610;</i>
+
+                    <ul class="user-panel">
+                        <li><a href="http://account.dianwutong.com/update-password.html">修改密码</a></li>
+                        <li id="logout" >退出登录</li>
+                        <li class="my-role" id="my-role">我的角色</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrap">
+               <div class="header">
+                    <div class="crumbs">
+                        <a href="power-room-list.html">返回配电室列表</a>
+                        &gt; <span class="pr-name"></span>
+                    
+                    </div>
+                   
+                    <div class="tabs">
+                        <a href="pr-material.html">相关资料</a>
+                        <a href="pr-check-list.html">巡检项目<div class="badge" id="inspection-badge"></div></a>
+                        <a href="pr-inspection-log.html">巡检日志</a>
+                        <a href="pr-repair-log.html">抢修日志</a> 
+                    </div>
+                 
+               </div>
+               <div class="conPadding2">
+                   <div class="page">{{content}}</div>
+                   <div class="base-info">
+                       <div class="title">
+                           <span>基本信息</span>
+                           <span class="right"> 
+                               <button id="toYCJXTpage">一次接线图</button>
+                           </span>
+                       </div>
+                       <div class="content">
+                            <div><label>配电室名称：</label><span class="pr-name"></span></div>
+                            <div><label>配电室地址：</label><span id="pr-address"></span></div>
+                            <div><label>客户名称：</label><span id="customer-name"></span></div>
+                            <div><label>客户电话：</label><span id="customer-mobile"></span></div>
+                            <div><label>工作站：</label><span id="station-name"></span></div>
+                            <div><label>站长：</label><span id="station-leader"></span></div>
+                            <div><label>工作站电话：</label><span id="station-mobile"></span></div>
+                            <div><span id="pr-desc"></span></div>
+                       </div>
+                       
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

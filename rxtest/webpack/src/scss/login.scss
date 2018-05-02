@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+@import "./common/common";
+*{margin:0;padding:0;}
+
+@media screen and (max-width: 1366px){
+	html{font-size:12px;}
+}
+
+@media screen and (min-width: 1367px ) and (max-width:1680px){
+	html{font-size:14px;}
+}
+
+@media screen and (min-width:1681px){
+	html{font-size:16px;}
+}
+
+body{min-width:1000px;min-height:600px;}
+header{height:10vh;width:100%;background-image: url(//cdn.dianwutong.com/ems/img/nav.png);min-height:1.5rem;}
+
+header div{font-size:1.5rem;line-height:10vh;color:white;padding-left:10px;margin-top:-1px;}
+
+.body{height:80vh;background:#00d5ac;min-height:400px}
+
+.bubble{
+	height:10vh;font-size:2rem;color:white;overflow:hidden;padding-left:50px;
+}
+.bubble img{height:10vh;}
+.bubble div{margin-top:-10vh;line-height:7vh;width:40vh;text-align:center;}
+
+.xingxiang img{height:50vh;}
+.xingxiang div{margin-top:-10vh;line-height:8vh;width:40vh;text-align:center;}
+
+.role:hover{
+	color: orangered;
+}

@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+
+@import "./common/common";
+.header{
+	.row{
+		a{
+			color: #5a5a5a;
+		}
+		span{
+			color: #010101;
+		}
+	}
+}
+.main{
+	display: flex;
+}
+.left-con{
+	width: 66.7%;
+	box-sizing: border-box;
+	.left-top{
+		box-sizing: border-box;
+		height: 50px;
+		line-height: 50px;
+		padding:0 20px;
+		.row{
+			div:nth-child(2){
+				font-size: 0px;
+				div {
+					button{
+						vertical-align: middle;
+						font-size: 14px;
+						color: #5a5a5a;
+					}
+					
+					display: inline-block;
+				}
+				div:nth-child(2){
+					margin: 0 30px;
+				}
+			}
+		}
+	
+	}
+	.left-content{
+		box-sizing: border-box;
+		padding:30px 50px;
+		table{
+			box-sizing: border-box;
+			width: 100%;
+			border: 1px solid #d2d2d2;
+			border-collapse: collapse;
+			font-size: 14px;
+			tr{
+				box-sizing: border-box;
+				td{
+					border: 1px solid #d2d2d2;
+					text-align: center;
+			
+				}
+				td:nth-child(1){
+					background-color: #f8f8f8;
+				}
+				td:nth-child(2){
+					color: #5a5a5a;
+					text-align: left;
+					padding: 10px 30px;
+				}
+			}
+			.survey{
+				td:nth-child(2){
+					.time,.desc,.pic{
+						margin-top: 20px;
+					}
+					.pic{
+						div{
+							display: inline-block;
+							margin-bottom: 20px;
+							margin-right: 10px;
+							width: 124px;
+							height: 124px;
+							line-height: 124px;
+							border: 1px solid #ccc;
+						}
+						
+					}
+				}
+			}
+			.process{
+				td:nth-child(2){
+					padding-top: 30px;
+					padding-bottom: 30px;
+				}
+				.process-state,.process-time{
+					display: flex;
+					align-items: center;
+					div{
+						width: 134px;
+						text-align: left;
+						font-size: 12px;
+					}
+				}
+				.process-icon{
+					display: flex;
+					align-items: center;
+					div{
+						color: #09b87c;
+					}
+					.circle-green{
+						width: 15px;
+						height: 15px;
+						line-height: 15px;
+						text-align: center;
+						border: 1px solid #09b87c;
+						border-radius: 50%;
+						font-size: 6px;
+					}
+					.line-green{
+						width: 124px;
+						height: 1px;
+						background-color: #9ae2c9;
+					}
+				}
+			}
+			
+		}
+	}
+}
+.right-con{
+	margin-left: 2%;
+	width: 31.3%;
+	.right-top{
+		height: 50px;
+		line-height: 50px;
+		padding:0 40px;
+		font-size: 16px;
+	}
+	.right-content{
+		box-sizing: border-box;
+		height: 326px;
+		padding:50px 40px;
+		div{
+			font-size: 14px;
+			padding-bottom: 10px;
+			span:nth-child(1){
+				color: #5a5a5a;
+			}
+		}
+	}
+}

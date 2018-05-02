@@ -1,0 +1,52 @@
+@import "./common/common";
+
+.total{
+    line-height: 30px;
+}
+
+.content{
+    .bg-white{
+        padding: 30px 40px;
+        min-height:300px;
+    }
+    .bug-list-table{
+        min-height: 300px;
+    }
+    .complete{
+        width: 50px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to left,#5edf9b,#9ae968 );
+        font-size: 14px;
+    }
+
+    .handling{
+        width: 50px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        color: #555;
+        background: linear-gradient(to right, #ffc500, #ffd442);
+        font-size: 14px;
+    }
+    .uncomplete{
+        width: 50px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to left,#ff3784,#ff6e9f );
+        font-size: 14px;
+    }
+
+}
+.page-button{
+    border: none;
+    background: #999;
+    color: #333;
+    padding:0px 10px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+	<style>
+		pre {
+			background: #ddd;
+			padding: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<p>引入jquery</p>
+	<pre>
+		let $ = require('jquery');
+		$('#div').width(200).height(200).css('background', 'red');
+	</pre>
+	<div class="div" id="div"></div>
+
+	<p>引入laydate</p>
+	<pre>
+		// 指定动态加载css的基地址
+		laydate.path = 'http://cdn.dianwutong.com/vendor/laydate/';
+		laydate.render({
+			elem: '#date',
+			type: 'date',
+			done: (value, data)=> {
+				alert(value)
+			}
+		})
+	</pre>
+	<input id="date" type="text" />
+	<p>编辑器</p>
+	<pre>
+		let wangEditor = require('../../../vendors/wangEditor/js/wangEditor');
+
+		// 编辑器
+		let editor = new wangEditor("editor"); 
+		editor.create();
+	</pre>
+	<div style="width:1200px">
+		<textarea id="editor" style=" height:200px;">
+			
+		</textarea>
+	</div>
+
+	<p>http util</p>
+	<pre>
+
+		import { http } from '../utils/http.util'
+
+		// 接口的基地址为 http://api.dianwutong.com
+		http.post(url:string, param:json):Observable<any>;
+		http.get(url:string, param:json):Observable<any>;	
+		http.put(url:string, param:json):Observable<any>;
+			
+		http.post('/admin/rest/user/login', {
+			'username' : '17600774629',
+			'password': '123456'
+		}).subscribe( res => {
+		
+		})
+
+		注意：
+			1、接口参考doclevel:http:192.168.0.121:20000；
+			2、调用【电务通运营中心管理平台】的接口时，需要在原接口的左边加上以及目录admin, 如：原来接口 /usr/login 调用http接口时 传入/admin/usr/login
+			3、调用【电务通EMS】的接口时，需要在原接口的左边加上以及目录ems, 如：原来接口 /usr/login 调用http接口时 传入/ems/usr/login
+	</pre>
+
+	<p>cookie util</p>
+	<pre>
+		import { cookie } from '../utils/cookie.util';
+
+		cookie.set(key:string, value:string, expires:number, path:string);
+		cookie.get(key:string);
+		cookie.delete(key:string);
+		cookie.deleteAll();
+
+	</pre>
+
+	<p>date util</p>
+	<pre>
+		dateUtil.setDate('2012-12-16');
+		dateUtil.setDate(new Date());
+		dateUtil.setDate(2131243242);
+		// 格式化时间
+		console.log(dateUtil.getFormattedDate('yy*MM*dd hh:mm:ss S'))
+		
+		// 判断是否闰年(不传参数默认是当前年份)
+		console.log(dateUtil.isLeapYear(2014));
+		
+		//获取某年的第n个月的天数 n从0计算
+		console.log(dateUtil.getMonthDays(2, 3018));
+		
+		// 获取当前设置的日期是一年中的第几周
+		console.log(dateUtil.getWeek());
+		
+		// 获取被设置日期的毫秒数
+		console.log(dateUtil.getMillisecond());
+		
+		// 获取当前日期的凌晨0点0分0秒 0毫秒 的毫秒数
+		console.log(dateUtil.getFirstMillisecondOfDate());
+		
+		// 获取当前设置的日期的23:59:59秒的毫秒数
+		console.log(dateUtil.getLastMillisecondOfDate());
+		
+		// 获取当前设置时间的整点毫秒数 即hour:00:00
+		console.log(dateUtil.getFirstMillisecondOfHour());
+		
+		// 获取当前设置时间的当前小时最后一刻毫秒数 即hour:59:59
+		console.log(dateUtil.getLastMillisecondOfHour());
+		
+		// 获取当前设置日期的 当月开始时刻的毫秒数 即 1日 00:00:00
+		console.log(dateUtil.getFirstMillisecondOfMonth());
+		
+		// 获取当前设置时间的 当前最后一刻的好藐视 即最后一天:59:59
+		console.log(dateUtil.getLastMillisecondOfMonth());
+		
+		// 获取当前设置的日期 当前年份的开始时刻的好毫秒数 
+		console.log(dateUtil.getFirstMillisecondOfYear());
+		
+		// 获取当前设置的日期 当前年份的最后一刻的毫秒数
+		console.log(dateUtil.getLastMillisecondOfYear());
+		
+		// 计算两个日期相差的天数
+		var date1 = new Date('2018-01-10');
+		var date2 = new Date('2018-01-01')
+		console.log(dateUtil.getDateDistance(date1, date2));
+		
+		// 在当前日期的基础上增加n天
+		console.log(dateUtil.getFormattedDate());
+		dateUtil.addDays(2);
+		console.log(dateUtil.getFormattedDate());
+		
+		// 在当前日期上减去n天
+		console.log(dateUtil.getFormattedDate());
+		dateUtil.subDays(2);
+		console.log(dateUtil.getFormattedDate());
+	</pre>
+
+	<p>分页</p>
+	<div id="pagination"></div>
+</body>
+
+</html>

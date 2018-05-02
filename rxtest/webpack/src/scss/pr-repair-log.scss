@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+@import "./power-room-base-info";
+
+
+.list-header{
+    height:50px;
+    line-height: 50px;
+    background: white;
+    padding:0px 32px;
+
+    .search-input{
+        position: relative;
+        top: -4px;
+    }
+}
+
+
+.list-body{
+    margin-top:10px;
+    background: white;
+
+    table{
+        width:100%;
+        text-align: center;
+
+        tbody{
+            border-collapse: collapse;
+          
+            tr{
+                cursor: pointer;
+                td{
+                    border-top: 1px solid #f7f7f7;
+                }
+            }
+        }
+        
+
+        td{
+            padding:18px 10px;
+        }
+
+        td:nth-child(3){
+            text-align: left;
+        }
+    }
+}

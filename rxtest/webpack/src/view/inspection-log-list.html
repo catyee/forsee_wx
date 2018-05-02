@@ -1,0 +1,59 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ,XJZZ,QXZZ" id="page-privilege">
+<header class="header">
+	<div class="row">
+
+		<div class="width15">
+			<div class="ui-select" tabindex="-1" id="power-room-selector">
+				<input placeholder="请选择配电室" disabled>
+				<span class="arrow"></span>
+				<ul>
+
+				</ul>
+			</div>
+
+		</div>
+		<div class="width2"></div>
+		<div class="width15">
+			<input type="text" class="date-range" placeholder="请选择日期" id="date-range">
+		</div>
+		<div class="width50 right">
+			共搜索到
+			<span class="color-danger" id="result-count">0</span>个日志
+		</div>
+	</div>
+</header>
+<div class="conPadding2">
+
+	<!-- 无记录提示 -->
+	<div class="empty-tips" id="empty-tips">
+		<i class="iconfont">&#xe622;</i>
+		<div>搜索不到任何巡检日志</div>
+		<div>可能是当前账号下未绑定任何配电室，请联系运营中心管理员处理</div>
+		<div>如果绑定了配电室，请尝试切换另外一个时间段</div>
+	</div>
+
+	<div class="log-list" id="inspection-logs-con">
+		<!-- <div class="log-item">
+			<div class="item-header">
+				<span>四达时代配电室</span>
+				<span>2017-12-26 15:14</span>
+			</div>
+			<div class="item-content">
+				<div>
+					<span>日检：52项</span>
+					<span>周检：52项</span>
+					<span>月检：52项</span>
+				</div>
+				<div>
+					<span>复检：52项</span>
+					<span>突发：52项</span>
+					<span>异常：52项</span>
+				</div>
+			</div>
+			<div class="item-foot">巡检组长：刘永伟</div>
+		</div> -->
+	</div>
+	<div class="center">
+		<div id="pagination"></div>
+	</div>
+</div>

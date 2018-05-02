@@ -1,0 +1,108 @@
+@CHARSET "UTF-8";
+
+@import "./common/common";
+.header{
+	.row{
+		a{
+			color: #5a5a5a;
+			&:hover{
+				color: $primary_color;
+			}
+		}
+		span{
+			color: #010101;
+		}
+	}
+}
+.main{
+	display: flex;
+}
+.left-con{
+	width: 66.7%;
+	box-sizing: border-box;
+	.left-top{
+		box-sizing: border-box;
+		height: 50px;
+		line-height: 50px;
+		padding:0 20px;
+		.handled-button, .unhandle-button{
+			cursor: pointer;
+		}
+	
+	}
+	.left-content{
+		box-sizing: border-box;
+		padding:30px 100px;
+		color: #5a5a5a;
+		font-size: 14px;
+		min-height: 400px;
+		.time,.desc,.pic{
+			margin-top: 20px;
+		}
+		.media{
+			.item{
+				display: inline-block;
+				margin-bottom: 20px;
+				margin-right: 10px;
+				width: 124px;
+				height: 124px;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 124px;
+				cursor: pointer;
+
+				img{
+					max-height: 100%;
+					max-width: 100%;
+					vertical-align: middle;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+.right-con{
+	margin-left: 2%;
+	width: 31.3%;
+	
+	.right-top{
+		height: 50px;
+		line-height: 50px;
+		padding:0 40px;
+		font-size: 16px;
+	}
+	.right-content{
+		box-sizing: border-box;
+		min-height: 326px;
+		padding:50px 40px;
+		
+		div{
+			font-size: 14px;
+			padding-bottom: 10px;
+			span:nth-child(1){
+				color: #5a5a5a;
+			}
+		}
+	}
+}
+
+/*创建抢修单对话框*/
+.create-repair-order-dialog {
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.3);
+	display: none;
+  
+	.dialog-content {
+	  width: 1000px;
+	  padding: 20px;
+	  box-sizing: border-box;
+	  box-shadow: 0 0 30px #666;
+	  background: white;
+	  margin: 100px auto;
+	}
+}

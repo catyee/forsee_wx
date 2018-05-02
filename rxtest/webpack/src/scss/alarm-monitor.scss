@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+@import "./common/common";
+
+/*  巡检问题   */
+.header-nav .alarm-monitor{border-bottom:3px solid #03b679;}
+.header-nav .alarm-monitor a{color:#03b679;opacity: 1;font-weight:bold;}
+
+/*    竖线       */
+
+.shu{height:30px;border-left:5px solid #03b679;margin-top:5px;float:left;border-radius:4px;}
+
+.q{font-family:微软雅黑;font-size:24px;color:#03b679;padding-bottom:13px;
+    margin-left:20px;}
+
+.right{ background:#f3f3f3;min-height:800px;border:1px solid #c1d7c5;border-radius:4px;
+    padding:13px 22px;border-bottom: none;}
+.tr-bg-grey{
+    background: #d9d9d9;
+}
+.pointer{
+    cursor: pointer;
+}
+table{
+    border-bottom: 1px solid #d9d9d9;
+}
+table tr:hover{
+    background: #d9d9d9;
+}
+.height115{
+    height: 115px;
+    width: 100%;
+}
+.border1{
+    border: 1px solid #c1d7c5;
+    border-top: none;
+    border-bottom: none;
+}
+.form{
+    text-align: right;
+    padding-right: 45px;
+}
+.bg-yellow{
+    background: #E9BE2B;
+}
+.btn{
+    color: white;
+}
+.color-orange{
+    color: orange;
+}
+.color-green{
+    color: #03b679;
+}
+.color-red{
+    color: red;
+}
+.color-black{
+    color: rgba(0,0,0,0.8);
+}

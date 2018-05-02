@@ -1,0 +1,165 @@
+@charset "UTF-8";
+@import "../../scss/common/ui";
+
+.check-list-tpl-selector {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+
+
+
+  .selector-content {
+    width: 1000px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px #666;
+    background: white;
+    margin: 100px auto;
+
+    .selector-header {
+      position: relative;
+      font-size: 16px;
+
+      .selector-close {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        font-size: 20px;
+        cursor: pointer; 
+      }
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .selector-body {
+      .selector-tip {
+        color: #404040;
+        padding: 20px 0;
+      }
+
+      label {
+        display: inline-block;
+        width: 10%;
+        text-align: right;
+        box-sizing: border-box;
+        padding-right: 5px;
+      }
+
+      input[type="text"]{
+          border:1px solid #999;
+          line-height: 30px;
+          height:30px;
+          outline: none;
+          padding:0px 5px;
+          width:240px;
+          box-sizing: border-box;
+          vertical-align: top;
+      }
+
+      .selector-viewer {
+        padding-top: 20px;
+        font-size: 0;
+
+        & > div {
+          display: inline-block;
+          vertical-align: top;
+          font-size: 16px;
+        }
+
+        .selector-tabs {
+          width: 10%;
+
+          span {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: 1px solid #eee;
+
+            &:not(:last-child) {
+              border-bottom: none;
+            }
+
+            &.active {
+              background: #eee;
+            }
+          }
+        }
+
+        .selector-tab-panels {
+          width: 90%;
+          height: 400px;
+          overflow: auto;
+          background: #eee;
+          padding: 10px 30px;
+          box-sizing: border-box;
+
+          .selector-tab-panel {
+            display: none;
+
+            &.active {
+              display: block;
+            }
+
+            table {
+              border-collapse: collapse;
+              background: white;
+
+              td {
+                border: 1px solid #aaa;
+                padding: 3px;
+                line-height: 28px;
+
+                .editor-remove-item{
+                    cursor: pointer;
+                }
+              }
+
+              td:nth-child(1) {
+                text-align: center;
+              }
+
+              td:nth-child(4) {
+                text-align: center;
+              }
+            }
+
+          }
+
+          select {
+            appearance: none;
+            // -webkit-appearance: none;
+            background: white;
+            border: none;
+            outline: #e9be2b;
+            width: 100%;
+
+            option {
+              width: 100%;
+              background: #fff;
+              padding: 5px;
+              border: 1px solid #e9be2b;
+
+              &:hover {
+                background: #e9be2b;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .selector-footer {
+      text-align: right;
+      padding-top: 20px;
+    }
+
+  }
+}
