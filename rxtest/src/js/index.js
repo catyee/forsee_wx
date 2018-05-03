@@ -14,3 +14,7 @@ export  function testFunction() {
 // 4.通过export方式导出，在导入时要加{ }，export default则不需要
 // 
 console.log('index.html333333333333')
+
+// cookie test
+document.cookie = 'test=test222'
+sessionStorage.setItem('test','1111111111111')
