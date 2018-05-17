@@ -1,0 +1,221 @@
+@CHARSET "UTF-8";
+@import "./power-room-base-info";
+
+.list-header{
+    height:50px;
+    background: white;
+    padding:0px 32px;
+
+    .tabs{
+        font-size: 0px;
+    }
+
+    .tab{
+        display: inline-block;
+        line-height: 46px;
+        font-size: 14px;
+        margin-right: 84px;
+        border-bottom:2px solid white;
+        border-top:2px solid white;
+        cursor: pointer;
+        position: relative;
+
+        .tab-badge{
+            position: absolute;
+            top:12px;
+            right:-4px;
+        }
+
+        &.active, &:hover{
+            color: #e9be2b;
+            border-bottom:2px solid #e9be2b;
+            transition: color 0.3s;
+        }
+
+        $badgeSize:12px;
+        .badge{
+            position: absolute;
+            font-size: 10px;
+            background: red;
+            width: $badgeSize;
+            height: $badgeSize;
+            line-height: $badgeSize;
+            padding: 1px;
+            text-align: center;
+            color: white;
+            right:-10px;
+            top:8px;
+            border-radius: 50%;
+            display: none;
+        }
+    }
+}
+
+
+.list-body{
+    margin-top:10px;
+    padding:20px;
+    background: white;
+
+    .tab-panel{
+        display: none;
+        min-height: 400px;
+    }
+
+    .tab-panel.active{
+        display: block;
+    }
+
+    // 巡检
+    .classify{
+        .classify-header{
+            background: #eeeeee;
+            height: 40px;
+            line-height: 40px;
+            padding:0px 13px;
+            font-size: 0px;
+            &>div{
+                font-size: 14px;
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+            }
+
+            .classify-name{
+                img{
+                    position: relative;
+                    top:2px;
+                }
+            }
+            
+            .classify-actions{
+                text-align: right;
+                &>span{
+                    display: inline-block;
+                    padding:0px 20px;
+                    cursor: pointer;
+                }
+
+                .use-tpl{
+                    color: #03b679;
+                }
+
+                .edit{
+                    color: #00b4ff;
+                }
+
+                .remove{
+                    color: #ff0000;
+                }
+            }
+
+        }
+
+        &.active{
+            .classify-name{
+                img{
+                    transform: rotate(180deg);
+                }
+            }
+            .classify-body{
+                // display: block;
+            }
+        } 
+
+        .classify-body{
+            display: none;
+            table{
+                text-align: center;
+                width:100%;
+                padding: 8px;
+                td{
+                    padding:10px;
+                }
+                td:nth-child(1){
+                    width:10%;
+                }
+                td:nth-child(2){
+                    width:70%;
+                    text-align: left;
+                }
+                td:nth-child(3){
+                    width:10%;
+                }
+                td:nth-child(4){
+                    width:10%;
+                }
+
+                tbody{
+                    color:#5a5a5a;
+                }
+            }
+            
+        }
+    }
+
+    .classify:not(:first-child){
+        margin-top:8px;
+    }
+
+    // 复检
+    .re-check-table{
+        width:100%;
+        border: 1px solid #bfbfbf;
+
+        tr{
+            &:hover{
+                background: #eee;
+            }
+            .remove{ 
+                color:red;
+                cursor: pointer;
+            }
+        }
+
+        td{
+            border: none;
+            padding: 13px 10px ;
+
+            &:nth-child(1){ text-align: center };
+            &:nth-child(3){ text-align: center };
+            &:nth-child(4){ text-align: center };
+        }
+        thead{
+            background:#ededed;
+        }
+    }
+
+    // 突发
+    .burst-table{
+        width:100%;
+        border: 1px solid #bfbfbf;
+
+        tr{
+            &:hover{
+                background: #eee;
+            }
+
+            .remove{ 
+                color:orangered;
+                cursor: pointer;
+            }
+
+            .edit{
+                cursor: pointer;
+                color:#00b4ff;
+            }
+        }
+
+        td{
+            border: none;
+            padding: 13px 10px ;
+
+            &:nth-child(2){ text-align: center };
+            &:nth-child(3){ text-align: center };
+        }
+        thead{
+            background:#ededed;
+        }
+    }
+
+}

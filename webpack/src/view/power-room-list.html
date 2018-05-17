@@ -1,0 +1,78 @@
+
+<input type="hidden" value="ZTZ,ZBZ,QXBZ,XJZZ,QXZZ" id="page-privilege">
+<div class="content conPadding1">
+	<div class="bg-white main" id="main-content">
+		<div class="height30"></div>
+		<div class="header-list" privilege="ZTZ">
+			<a href="/repairing-list.html" class="item center bg-burst color-white">
+				<div class="title font16 ">抢修单</div>
+				<div id="task-repair-order-count" class="content">-</div>
+				<div class="flag">抢修单</div>
+			</a>
+			<a href="/inspection-bug-list.html"  class="item center bg-repair color-white">  
+				<div class="title font16 ">巡检问题</div>
+				<div id="task-inspection-bug-count" class="content">-</div>
+				<div class="flag">巡检问题</div>
+			</a>
+			<a href="/system-warning.html"  class="item center bg-operate color-white">
+				<div class="title font16 ">正在报警</div>
+				<div id="task-alarm-count" class="content">-</div> 
+				<div class="flag">正在报警</div>
+			</a>
+			<a href="/inspection-arrange-list.html"  class="item center bg-inspect color-white">
+				<div class="title font16 ">巡检安排情况</div>
+				<div id="task-inspection-arrange-date" class="content"></div>
+				<div class="flag">巡检安排</div>
+			</a>
+		</div>
+
+		<div class="pr-table">  
+			<div class="height35"></div>
+			<div class="search-panel">
+				<div class="font16">当前共有
+					<span class="color-danger" id="total">0</span>个配电室</div>
+				<div class="search-input">
+					<input type="text" placeholder="配电室名称/客户名称" id="keyword">
+					<i class="iconfont">&#xe611;</i>
+				</div>
+			</div>
+			<div class="height20"></div>
+
+			<!-- 配电室列表 -->
+			<div class="pr-list" id="pr-list">
+				<div class="pr-list-header"> 
+					<div class="row">
+						<div class="width15">配电室名称</div>
+						<div class="width30">配电室地址</div>
+						<div class="width10">客户名称</div>
+						<div class="width10">客户电话</div> 
+						<div class="width10">工作站</div>
+						<div class="width4">站长</div>
+						<div class="width8">站长电话</div>
+						<div class="width8">创建时间</div>
+					</div>
+				</div> 
+				<div class="pr-list-body" id="pr-list-body"> 
+
+				</div>
+
+				<div class="center">
+					<ul id="pagination"></ul>
+				</div>
+
+			</div>
+
+			<!-- 无记录提示 -->
+			<div class="empty-tips" id="empty-tips">
+				<i class="iconfont">&#xe622;</i>
+				<div>搜索不到任何配电室</div>
+				<div>可能是当前账号下未绑定任何配电室，请联系运营中心管理员处理</div>
+				<div>请试一试其他关键字搜索</div>
+			</div>
+
+
+		</div>
+		<div class="height50"></div>
+
+	</div>
+</div>

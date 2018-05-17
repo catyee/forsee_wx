@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+@import "./common/common";
+
+body{
+	margin:0px;
+	font-family:微软雅黑
+}
+
+.BMap_cpyCtrl
+{
+	display:none;
+}
+.anchorBL{
+	display:none;
+}
+#inspection-grouper-list-panel{
+	display:none;
+	position:fixed;
+	top:20px;
+	right: 20px;
+	background:rgba(255,255,255,0.9);
+	padding:20px;
+	box-border:5px;
+}
+
+#inspection-grouper-list-panel .header{
+	color:#03b679;
+	font-size:18px;
+	padding:0px 0 10px 0px;
+}
+
+#inspection-grouper-list-panel .body div{
+	padding:5px 10px;
+	background:#03b679;
+	color:white;
+	margin:5px;
+	cursor:pointer;
+}

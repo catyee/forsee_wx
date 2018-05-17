@@ -1,0 +1,453 @@
+@import "colors";
+
+// 覆盖浏览器样式 样式
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+
+input::-ms-clear {
+  display: none;
+}
+/*删除ie浏览器的'删除'*/
+input::-ms-reveal {
+  display: none;
+}
+/*删除ie浏览器的'查看密码'*/
+input[type="file"] {
+  width: 0;
+  height: 0;
+  border: none;
+  outline: none;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+$min_width: 1200px;
+// body最小宽度
+$minR_width: 1200px;
+// body右侧最小宽度
+$bodyL_width: 300px;
+//body左侧宽度
+
+// body
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: $body_color;
+  min-width: 1200px;
+  animation: bodyFadeIn .2s linear forwards;
+  -webkit-animation: bodyFadeIn .2s linear forwards;
+}
+
+// 组件样式
+input,
+select,
+textarea:focus {
+  border: 1px solid #f3b700;
+  outline: none;
+}
+
+// 栅格布局系统
+.row {
+  width: 100%;
+  display: flex;
+}
+
+//宽度
+@for $i from 1 through 100 {
+  .width#{$i} {
+    width: $i+%;
+  }
+}
+
+//高
+@for $i from 1 through 100 {
+  .height#{$i} {
+
+    width: 100%;
+    clear: both;
+    height: $i+px;
+
+  }
+}
+
+//基本样式
+
+//边距
+.no-padding {
+  padding: 0;
+}
+
+//content边距
+.conPadding1 {
+  padding: 70px 0 0 20px;
+}
+
+.conPadding2 {
+  padding: 80px 20px 20px;
+}
+
+.padding40 {
+  padding: 0 40px;
+}
+
+.padding20 {
+  padding: 0 20px;
+}
+
+.paddingL40 {
+  padding-left: 40px;
+}
+
+.paddingR40 {
+  padding-right: 40px;
+}
+
+//overflow
+
+.hidden {
+  overflow: hidden;
+}
+
+.auto {
+  overflow: auto;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+//字体颜色
+
+.color-primary {
+  color: $primary_color;
+}
+
+.color-danger {
+  color: $danger_color;
+}
+
+.color-white {
+  color: $white_color;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-grey {
+  color: $grey_color;
+}
+
+.color-success {
+  color: $success_color;
+}
+
+.color-warning {
+  color: $warning_color;
+}
+
+//背景颜色
+
+.bg-grey {
+  background: $grey_color;
+}
+
+.bg-white {
+  background: $white_color;
+}
+
+.bg-primary {
+  background-color: $primary_color;
+}
+
+//字体大小
+@for $i from 8 through 30 {
+  .font#{$i} {
+    font-size: $i+px;
+  }
+}
+
+//对齐方式
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+//隐藏
+
+.none {
+  display: none;
+}
+
+//光标样式
+
+.pointer {
+  cursor: pointer;
+}
+
+.move {
+  cursor: move;
+}
+
+//溢出隐藏
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//common layout
+
+.nav-list {
+  z-index: 999;
+  position: fixed;
+  width: $bodyL_width;
+  background: #fff;
+  height: 100%;
+
+  .logo {
+    margin-left: 40px;
+
+    img {
+      width: 152px;
+      height: 55px;
+    }
+  }
+  /*图标*/
+  .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+  }
+  /*配电室背景*/
+  .icon-bg-peidianshi {
+    background: linear-gradient(to left,#ffd177,#f3b700);
+  }
+  /*正在报警背景*/
+  .icon-bg-zhengzaibaojing {
+    background: linear-gradient(to left,#ff8e9b,#ff4b69);
+  }
+  /*巡检问题背景*/
+  .icon-bg-xunjianwenti {
+    background: linear-gradient(to left,#dc73ff,#aa3bff);
+  }
+  /*巡检安排背景*/
+  .icon-bg-xunjiananpai {
+    background: linear-gradient(to left,#72c5ff,#00aeff);
+  }
+  /*抢修日志背景*/
+  .icon-bg-qiangxiurizhi {
+    background: linear-gradient(to left,#ffc64e,#ff9600);
+  }
+  /*巡检日志背景*/
+  .icon-bg-xunjianrizhi {
+    background: linear-gradient(to left,#72c5ff,#00aeff);
+  }
+  /*操作票背景*/
+  .icon-bg-caozuopiao {
+    background: linear-gradient(to left,#9ae968,#5edf9b );
+  }
+  /*工作票背景*/
+  .icon-bg-gongzuopiao {
+    background: linear-gradient(to left,#ac93ff,#7d67ff );
+  }
+  /*系统挂牌背景*/
+  .icon-bg-xitongguapai {
+    background: linear-gradient(to left,#ff6e9f,#ff3784 );
+  }
+  /*抢修单背景*/
+  .icon-bg-qiangxiudan {
+    background: linear-gradient(to left,#ffc64e,#ff9600 );
+  }
+
+  .nav-content {
+    margin-left: 40px;
+
+    .nav-item {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      width: 183px;
+      position: relative;
+
+      span {
+        font-size: 18px;
+
+        margin-left: 16px;
+      }
+
+      .arrow {
+        float: right;
+      }
+
+      &:hover .arrow,
+      &:hover span {
+        color: $black_color;
+      }
+
+      .badge {
+        position: absolute;
+        right: 30px;
+        top: 6px;
+      }
+    }
+
+  }
+}
+
+.main-content {
+  width: 100%;
+  box-sizing: border-box;
+
+  .main-header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    min-width: $minR_width;
+    padding: 0 76px 0 320px;
+    height: 60px;
+    line-height: 60px;
+
+    span {
+      margin: 0 10px;
+    }
+
+    .user-name {
+      position: relative;
+
+      &:focus {
+        outline: none;
+
+        .user-panel {
+          display: block;
+        }
+      }
+
+      .user-panel {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: white;
+        box-shadow: 0 0 5px rgba($color: #000000, $alpha: .3);
+        width: 120px;
+        list-style: none;
+        padding: 10px 0;
+        z-index: 999;
+
+        li {
+          text-align: center;
+          line-height: 30px;
+
+          &.active {
+            color: #e9be2b;
+          }
+        }
+
+        .my-role {
+          margin-top: 10px;
+          padding-left: 20px;
+          text-align: left;
+          font-size: 12px;
+          color: #333;
+        }
+      }
+    }
+
+  }
+
+  .wrap {
+    padding-top: 60px;
+    padding-left: 300px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  position: fixed;
+  top: 60px;
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.empty-tips {
+  color: #aaa;
+  text-align: center;
+  font-size: 12px;
+  padding: 50px;
+  display: none;
+
+  div {
+    padding: 5px;
+  }
+
+  i {
+    font-size: 48px;
+
+  }
+
+  div:nth-child(2) {
+    font-size: 16px;
+  }
+
+}
+
+// badge
+.badge {
+  min-width: 20px;
+  font-size: 12px;
+  height: 20px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  background: red;
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 16px;
+  transform: scale(0.8);
+  display: none;
+}
+
+.small-badge {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: red;
+  display: none;
+}

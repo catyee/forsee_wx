@@ -1,0 +1,40 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ,XJZZ,QXZZ" id="page-privilege">
+<div class="list-header">
+	<div class="row">
+		<div class="width50">
+			巡检日志
+		</div>
+		<div class="width50 right">
+			<div class="search-input">
+				<input placeholder="请选择日期" id="date-range">
+				<i class="iconfont">&#xe611;</i>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="list-body">
+	<table cellspacing="0" id="log-table">
+		<thead>
+			<tr>
+				<td width="20%">报警时间</td>
+				<td width="20%">抢修完成时间</td>
+				<td width="40%">问题描述</td>
+				<td width="20%">抢修人</td>
+			</tr>
+		</thead>
+		<tbody id="log-container">
+			
+		</tbody>
+	</table>
+	<!-- 无记录提示 -->
+	<div class="empty-tips" id="empty-tips">
+		<i class="iconfont">&#xe622;</i>
+		<div>搜索不到巡检日志</div>
+		<div>可能是当前配电室没有安排巡检任务</div>
+		<div>或者请试一试其他时间段</div>
+	</div>
+
+</div>
+<div class="center">
+	<div id="pagination"></div>
+</div>

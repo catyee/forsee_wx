@@ -1,0 +1,141 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ,XJZZ,QXZZ" id="page-privilege">
+<header class="header">
+	<div class="row font16">
+		<a href="repairing-list.html">抢修单列表</a>
+		<span>>抢修单详情</span>
+	</div>
+</header>
+
+<div class="conPadding2">
+	<div class="main">
+		<div class="left-con">
+			<div class="left-top bg-white">
+				<div class="row">
+					<div class="width40">抢修单</div>
+					<div class="width60 right">
+						<div class="action-btns">
+							<button class="ui-btn ui-btn-primary none" id="destroy-btn" privilege="ZTZ">销单</button>
+						
+							<button class="ui-btn ui-btn-primary none" id="judge-btn" privilege="ZTZ">定性</button>
+						
+							<button class="ui-btn ui-btn-primary none" id="send-check-btn" privilege="ZTZ">查勘派遣</button>
+						
+							<button class="ui-btn ui-btn-primary none" id="send-repair-btn" privilege="ZTZ">抢修派遣</button>
+
+							<button class="ui-btn ui-btn-primary none" id="set-recheck-btn" privilege="ZTZ">设置复检</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="height10"></div>
+			<div class="left-content bg-white">
+				<table>
+					<tr>
+						<td class="width20">警情描述</td>
+						<td class="width80" id="bug-desc"></td>
+					</tr>
+					<tr class="survey">
+						<td class="width20">查勘记录</td>
+						<td class="width80" id="check-records">
+						</td>
+					</tr>
+
+					<tr>
+						<td class="width20">抢修方案</td>
+						<td class="width80" id="programme"></td>
+					</tr>
+					<tr class="process">
+						<td class="width20">抢修过程</td>
+						<td class="width80">
+							<div class="process-state">
+								<div>产生报警</div>
+								<div>开始查勘</div>
+								<div>开始抢修</div>
+								<div>抢修完成</div>
+							</div>
+							<div class="height10"></div>
+							<div class="process-icon" id="process-icon">
+								<div class="circle circle-green">√</div>
+								<div class="line line-green"></div>
+								<div class="circle circle-green">√</div>
+								<div class="line  line-green"></div>
+								<div class="circle">√</div>
+								<div class="line"></div>
+								<div class="circle">√</div>
+							</div>
+							<div class="height10"></div>
+							<div class="process-time" id="process-time">
+								<div>2017-12-26 14:28:58</div>
+								<div>2017-12-26 14:28:58</div>
+								<div>没有安排抢修</div>
+								<div>没有安排抢修</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="width20">抢修记录</td>
+						<td class="width80" id="repair-result">无抢修记录</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="right-con">
+			<div class="right-top bg-white">
+				配电室详情
+			</div>
+			<div class="height10"></div>
+			<div class="right-content bg-white">
+				<div><label>配电室名称：</label><span class="pr-name"></span></div>
+				<div><label>配电室地址：</label><span id="pr-address"></span></div>
+				<div><label>客户名称：</label><span id="customer-name"></span></div>
+				<div><label>客户电话：</label><span id="customer-mobile"></span></div>
+				<div><label>工作站：</label><span id="station-name"></span></div>
+				<div><label>站长：</label><span id="station-leader"></span></div>
+				<div><label>站长电话：</label><span id="station-mobile"></span></div>
+				<div><span id="pr-desc"></span></div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="dialog" id="judge-dialog">
+	<div class="dialog-content">
+		<div class="dialog-header">
+			<span>定性</span>
+			<span class="dialog-close close-nature">&times</span>
+		</div>
+		<div class="dialog-body">
+			<div class="dialog-tip">
+				请根据报警情况定性该报警，如果定性为“合同内”，请制定抢修方案。
+			</div>
+			<div class="dialog-line">
+				<label>问题定性</label>
+				<div class="value">
+					<div class="radio-group">
+						<input type="radio" id="nature-in" value="1" name="nature" checked>
+						<label for="nature-in" style="width:60px">合同内</label>
+					</div>
+					<div class="radio-group">
+						<input type="radio" id="nature-out" value="0" name="nature">
+						<label for="nature-out"  style="width:60px">合同外</label>
+					</div>
+				</div>
+			</div>
+			<div class="height20"></div>
+			<div class="dialog-line" id="programme-line">
+				<label>抢修方案</label>
+				<div class="value">
+					<textarea class="bug-desc" id="programme-textarea"></textarea>
+				</div>
+			</div>
+
+			<div class="height10"></div>
+		</div>
+		<div class="dialog-footer">
+			<span id="empty-programme-error" class="color-danger center none">请填写抢修方案&nbsp;&nbsp;&nbsp;</span>
+			<button class="ui-btn close-nature">关闭</button>
+			<button class="ui-btn ui-btn-primary" id="save-nature">保存</button>
+		</div>
+	</div>
+</div>

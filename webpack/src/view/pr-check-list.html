@@ -1,0 +1,86 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ,XJZZ,QXZZ" id="page-privilege">
+<div class="list-header">
+	<div class="row">
+		<div class="width50 tabs">
+			<div class="tab active">巡检</div>
+			<div class="tab">
+				<span>复检</span>
+				<span class="small-badge tab-badge" id="re-check-badge"></span>
+			</div>
+			<div class="tab">
+				<span>突发</span>
+				<span class="small-badge tab-badge" id="burst-badge"></span>
+			</div>
+		</div>
+		<div class="width50 right">
+			<div class="height10"></div>
+			<button class="ui-btn ui-btn-primary" id="add-classify" privilege="ZTZ">添加分类</button>
+		</div>
+	</div>
+
+</div>
+<div class="list-body">
+	<div class="tab-panel active">
+		<div id="classify-container">
+			
+		</div>
+
+		<!-- 无记录提示 -->
+		<div class="empty-tips" id="empty-check-classify-tips" style="padding-top:120px;">
+			<i class="iconfont">&#xe622;</i>
+			<div>搜索不到任何巡检分类</div>
+			<div>请点击右上角的“添加分类”按钮添加一个巡检分类</div>
+		</div>
+	</div>
+	<div class="tab-panel">
+		<table id="re-check-table" class="re-check-table" cellspacing="0">
+			<thead>
+				<tr>
+					<td>复检标题</td>
+					<td>复检内容</td>
+					<td>开始时间</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody id="re-check-list">
+				
+			</tbody>
+		</table>
+
+		<!-- 无记录提示 -->
+		<div class="empty-tips" id="re-check-empty-tips" style="padding:120px 0px;">
+			<i class="iconfont">&#xe622;</i>
+			<div>搜索不到任何巡检分类</div>
+			<div>请点击右上角的“添加分类”按钮添加一个巡检分类</div>
+		</div>
+
+	</div>
+	<div class="tab-panel">
+		<table id="burst-table" class="burst-table" cellspacing="0">
+			<thead>
+				<tr>
+					<td>突发内容</td>
+					<td>产生时间</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody id="burst-list">
+				<tr>
+					<td>检查信号屏是否正常工作，检查电池是否有鼓包</td>
+					<td>2018-21-33</td>
+					<td>
+						<span class="edit" data-id="1" data-content="检查信号屏是否正常工作，检查电池是否有鼓包">设置为巡检</span>
+						<span class="remove">忽略</span>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+		<!-- 无记录提示 -->
+		<div class="empty-tips" id="burst-empty-tips" style="padding:120px 0px;">
+			<i class="iconfont">&#xe622;</i>
+			<div>搜索不到突发项</div>
+		</div>
+	</div>
+</div>

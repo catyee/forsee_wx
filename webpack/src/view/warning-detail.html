@@ -1,0 +1,94 @@
+<input type="hidden" value="ZTZ,ZBZ,QXBZ" id="page-privilege">
+<header class="header">
+	<div class="row font16">
+		<a href="system-warning.html">返回正在报警列表</a>
+		<span>>正在报警详情</span>
+	</div>
+</header>
+
+<div class="conPadding2">
+	<div class="main">
+		<div class="left-con">
+			<div class="left-top bg-white">
+				<div class="row">
+					<div class="width40">警情</div>
+					<div class="width60 right">
+						<div class="act-btns">
+							<button class="ui-btn ui-btn-primary none" id="ignore-alarm" privilege="ZTZ">忽略报警</button>
+							<button class="ui-btn ui-btn-primary none" id="create-order" privilege="ZTZ">生成抢修单</button>
+							<a class="ui-btn ui-btn-primary none" id="check-order" privilege="ZTZ">查看抢修单</a>
+							<span class="status-content none" id="ignore-status">已忽略</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="height10"></div>
+			<div class="left-content bg-white">
+				<table>
+					<tr>
+						<td class="width20">警情描述</td>
+						<td class="width80" id="alarm-desc"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">报警点</td>
+						<td class="width80" id="tag-name"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">报警值</td>
+						<td class="width80" id="alarm-value"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">报警设定值</td>
+						<td class="width80" id="threshold-value"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">报警类型</td>
+						<td class="width80" id="alarm-type"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">报警时间</td>
+						<td class="width80" id="alarm-time"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">配电室</td>
+						<td class="width80"><a class="power-room"></a></td>
+                    </tr>
+                    <tr>
+						<td class="width20">配电室地址</td>
+						<td class="width80 power-room-address"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">客户</td>
+						<td class="width80 power-room-customer"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">客户联系人</td>
+						<td class="width80 customer-contact"></td>
+                    </tr>
+                    <tr>
+						<td class="width20">客户电话</td>
+						<td class="width80 customer-mobile"></td>
+					</tr>
+			
+				</table>
+			</div>
+		</div>
+		<div class="right-con">
+			<div class="right-top bg-white">
+				配电室详情
+			</div>
+			<div class="height10"></div>
+			<div class="right-content bg-white">
+					<div><label>配电室名称：</label><span class="power-room"></span></div>
+					<div><label>配电室地址：</label><span class="power-room-address"></span></div>
+					<div><label>客户名称：</label><span class="power-room-customer"></span></div>
+					<div><label>客户电话：</label><span class="customer-mobile"></span></div>
+					<div><label>工作站：</label><span id="station-name"></span></div>
+					<div><label>站长：</label><span id="station-leader"></span></div>
+					<div><label>工作站电话：</label><span id="station-mobile"></span></div>
+					<div><span id="pr-desc"></span></div>
+			</div>
+		</div>
+	</div>
+
+</div>

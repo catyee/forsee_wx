@@ -1,0 +1,309 @@
+<input type="hidden" id="page-privilege" value="ZTZ">
+<header class="header">
+	<div class="row font16">
+		<a href="inspection-arrange-list.html">返回巡检安排列表</a>
+		<span>>巡检安排详情</span>
+	</div>
+</header>
+<div class="conPadding2">
+	<div class="main">
+		<div class="left-con" id="top-bar">
+			<div class="left-top bg-white">
+				<div class="row">
+					<div class="width50 date">
+						<div>巡检日期</div>
+						<div>
+							<span id="prev-day" class="day-button">
+								<i class="iconfont">&#xe61a;</i>
+							</span>
+							<span id="selected-date">2018-01-09</span>
+							<span id="next-day" class="day-button">
+								<i class="iconfont">&#xe61a;</i>
+							</span>
+						</div>
+					</div>
+					<div class="width50 right editable-panel">
+						<div class="checkbox-group">
+							<input type="checkbox" id="expand">
+							<label for="expand">展开全部分组</label>
+						</div>
+
+						<button class="ui-btn ui-btn-primary save">保存</button>
+					</div>
+				</div>
+			</div>
+			<div class="height10"></div>
+			<!-- 左侧列表 不可编辑 -->
+			<div class="left-content uneditable-panel" id="uneditable-arrange-info-panel">
+				<div class="header-title">
+					<div class="font16" id="groupName"></div>
+					<div class="title-right">
+						<div class="time-panel">
+							<div class="font12">上班时间：</div>
+							<div class="work-time">
+								< &nbsp;<span id="work-time"></span>&nbsp; >
+							</div>
+
+						</div>
+						<div class="pr-number font12">配电室数量:
+							<span class="color-danger" id="pr-count"></span>个</div>
+					</div>
+				</div>
+				<div class="group-arrange table-striped">
+
+					<table class="bg-white">
+						<tbody id="group-detail">
+							<tr>
+								<td class="width10">序号</td>
+								<td class="width20">配电室名称</td>
+								<td class="widith25">配电室地址</td>
+								<td class="width10">日检</td>
+								<td class="width10">突发</td>
+								<td class="width10">异常</td>
+								<td class="width15">巡检状态</td>
+							</tr>
+							<!-- <tr>
+								<td class="width10">1</td>
+								<td class="width20">中外运敦豪中外运敦豪中外运敦豪中外运敦豪</td>
+								<td class="widith30">北京 大兴 北京经济技术开发区荣华南路18号</td>
+								<td class="width10">0项</td>
+								<td class="width10">0项</td>
+								<td class="width10">0项</td>
+								<td class="width10 color-success">已完成</td>
+							</tr>
+							<tr>
+								<td class="width10">1</td>
+								<td class="width20">中外运敦豪中外运敦豪中外运敦豪中外运敦豪</td>
+								<td class="widith30">北京 大兴 北京经济技术开发区荣华南路18号</td>
+								<td class="width10">0项</td>
+								<td class="width10">0项</td>
+								<td class="width10">0项</td>
+								<td class="width10 color-success">已完成</td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- 左侧列表 可编辑 -->
+			<div class="left-contant editable-panel editable-arrange-list" id="editable-arrange-list-panel">
+				<!-- <div class="arrange-item normal-height">
+					<div class="header-title">
+						<div class="font16">杨天齐组</div>
+						<div class="title-right">
+							<div class="time-panel">
+								<div class="font12">上班时间：</div>
+								<div class="work-time">
+									< &nbsp;<span class="edit-work-time">08:30</span>&nbsp; >
+								</div>
+							</div>
+							<div class="pr-number font12">配电室数量:
+								<span class="color-danger">9</span>个</div>
+						</div>
+					</div>
+					<div class="group-item">
+						<div class="row">
+							<div class="content">
+								<div class="iconfont pr-icon">&#xe614;</div>
+								<div class="pr">
+									<div class="pr-name">中外运敦豪配电室[A+]</div>
+									<div class="address ellipsis" title="地址">北京 大兴区 北京经济技术开发区荣华南路18号</div>
+								</div>
+							</div>
+
+							<div class="delete">删除</div>
+						</div>
+					</div>
+					<div class=" group-item">
+						<div class="row">
+							<div class="content">
+								<div class="iconfont pr-icon">&#xe614;</div>
+								<div class="pr">
+									<div class="pr-name">中外运敦豪配电室[A+]</div>
+									<div class="address ellipsis" title="地址">北京 大兴区 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号</div>
+								</div>
+							</div>
+							<div class="delete">删除</div>
+						</div>
+					</div>
+					<div class=" group-item">
+						<div class="row">
+							<div class="content">
+								<div class="iconfont pr-icon">&#xe614;</div>
+								<div class="pr">
+									<div class="pr-name">中外运敦豪配电室[A+]</div>
+									<div class="address ellipsis" title="地址">北京 大兴区 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号</div>
+								</div>
+							</div>
+							<div class="delete">删除</div>
+						</div>
+					</div>
+					<div class=" group-item">
+						<div class="row">
+							<div class="content">
+								<div class="iconfont pr-icon">&#xe614;</div>
+								<div class="pr">
+									<div class="pr-name">中外运敦豪配电室[A+]</div>
+									<div class="address ellipsis" title="地址">北京 大兴区 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号</div>
+								</div>
+							</div>
+							<div class="delete">删除</div>
+						</div>
+					</div>
+					<div class=" group-item">
+						<div class="row">
+							<div class="content">
+								<div class="iconfont pr-icon">&#xe614;</div>
+								<div class="pr">
+									<div class="pr-name">中外运敦豪配电室[A+]</div>
+									<div class="address ellipsis" title="地址">北京 大兴区 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号北京 大兴 北京经济技术开发区荣华南路18号</div>
+								</div>
+							</div>
+							<div class="delete">删除</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="arrange-item normal-height">
+					<div class="header-title">
+						<div class="font16">杨天齐组</div>
+						<div class="title-right">
+							<div class="time-panel">
+								<div class="font12">上班时间：</div>
+								<div class="work-time">
+									< &nbsp;<span class="edit-work-time">08:30</span>&nbsp; >
+								</div>
+							</div>
+							<div class="pr-number font12">配电室数量:
+								<span class="color-danger">9</span>个</div>
+						</div>
+					</div>
+					<div class="no-group-item">
+						今日没有巡检任务
+					</div>
+				</div> -->
+
+			</div>
+		</div>
+
+		<!-- 右侧菜单 不可编辑-->
+		<div class="right-con uneditable-panel" id="group-list">
+			<div class="right-top bg-white">
+				全部分组
+			</div>
+			<div class="height10"></div>
+			<div class="right-content bg-white">
+				<div id="uneditable-group-list">
+					<!-- <div class="group-item">
+						<div>刘永伟组</div>
+						<div>
+							<span>配电室:0个</span>
+							<span>无巡检任务</span>
+						</div>
+					</div>
+					<div class="group-item">
+						<div>刘永伟组</div>
+						<div>
+							<span>配电室:0个</span>
+							<span>无巡检任务</span>
+						</div>
+					</div>
+					<div class="group-item">
+						<div>刘永伟组</div>
+						<div>
+							<span>配电室:0个</span>
+							<span>无巡检任务</span>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+		<!--右侧菜单 可编辑-->
+		<div class="right-con editable-panel" id="pr-list">
+			<div class="right-top bg-white">
+				<div>我的配电室</div>
+				<div class="total">共计
+					<span class="color-danger" id="total-pr-count"></span>个配电室</div>
+			</div>
+			<div class="height10"></div>
+			<div class="right-content-editable bg-white">
+				<div id="editable-pr-list">
+					<!-- <div class="group-item">
+						<div class="row">
+							<div class="iconfont pr-icon">&#xe614;</div>
+							<div>
+								<div class="pr-name">中外运敦豪配电室[A+]</div>
+								<div class="address">北京 大兴区 北京经济技术开发区荣华南路18号</div>
+							</div>
+						</div>
+
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- 选择上班时间的面板 -->
+<div id="select-start-work-time-panel" class="time-selector" style="display:none">
+	<div class="color-primary">设置开始上班时间</div>
+	<div class="height5"></div>
+	<div>
+		<button class="btn">00:00</button>
+		<button class="btn">00:30</button>
+		<button class="btn">01:00</button>
+		<button class="btn">01:30</button>
+		<button class="btn">02:00</button>
+		<button class="btn">02:30</button>
+		<button class="btn">03:00</button>
+		<button class="btn">03:30</button>
+		<button class="btn">04:00</button>
+		<button class="btn">04:30</button>
+		<button class="btn">05:00</button>
+		<button class="btn">05:30</button>
+		<button class="btn">06:00</button>
+		<button class="btn">06:30</button>
+		<button class="btn">07:00</button>
+		<button class="btn">07:30</button>
+		<button class="btn">08:00</button>
+		<button class="btn">08:30</button>
+		<button class="btn">09:00</button>
+		<button class="btn">09:30</button>
+		<button class="btn">10:00</button>
+		<button class="btn">10:30</button>
+		<button class="btn">11:00</button>
+		<button class="btn">11:30</button>
+		<button class="btn">12:00</button>
+		<button class="btn">12:30</button>
+		<button class="btn">13:00</button>
+		<button class="btn">13:30</button>
+		<button class="btn">14:00</button>
+		<button class="btn">14:30</button>
+		<button class="btn">15:00</button>
+		<button class="btn">15:30</button>
+		<button class="btn">16:00</button>
+		<button class="btn">16:30</button>
+		<button class="btn">17:00</button>
+		<button class="btn">17:30</button>
+		<button class="btn">18:00</button>
+		<button class="btn">18:30</button>
+		<button class="btn">19:00</button>
+		<button class="btn">19:30</button>
+		<button class="btn">20:00</button>
+		<button class="btn">20:30</button>
+		<button class="btn">21:00</button>
+		<button class="btn">21:30</button>
+		<button class="btn">22:00</button>
+		<button class="btn">22:30</button>
+		<button class="btn">23:00</button>
+		<button class="btn">23:30</button>
+	</div>
+</div>
+
+<!-- 无记录提示 -->
+<div class="empty-tips" id="empty-tips">
+	<i class="iconfont">&#xe622;</i>
+	<div>当日没有巡检安排</div>
+</div>

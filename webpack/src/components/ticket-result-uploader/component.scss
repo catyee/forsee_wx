@@ -1,0 +1,55 @@
+.ticket-result-uploader{
+    overflow: auto;
+    $size:177.5px;
+   .ticket-result-uploader-button{
+       width: $size;
+       height: $size;
+       background: #eee;
+       text-align: center;
+       border: 1px #ccc dashed;
+       font-size: 24px;
+       color:#aaa;
+       line-height: $size;
+       display: inline-block;
+       vertical-align: top;
+       margin: 0px 10px 10px 0px;
+       cursor: pointer;
+   }
+
+   .ticket-result-uploader-image{
+        width: $size;
+        height: $size;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0px 10px 10px 0px;
+        border: 1px #ccc dashed;
+        text-align: center;
+        position: relative;
+        div{
+            width: $size;
+            height: $size;
+            display: table-cell;
+            vertical-align: middle;
+            img{
+                max-width: $size;
+                max-height: $size;
+            }
+        }
+
+        &:hover .ticket-result-uploader-image-close{
+            font-size: 12px;
+            width:16px;
+            height:16px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.9);
+            color:white;
+            text-align: center;
+            line-height: 16px;
+            position: absolute;
+            top:5px;
+            right:5px;
+            cursor: pointer;
+        }
+        
+   }
+}

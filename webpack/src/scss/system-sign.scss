@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+@import "./common/common";
+
+.content {
+  padding:34px 200px 20px 60px;
+}
+.operate{
+  font-size: 0px;
+  cursor: pointer;
+  div{
+    display: inline-block;  
+    font-size: 14px;
+    color: #a545ff;
+    &:hover{
+      color: $primary_color;
+    }
+  }
+}
+.table-striped tr{
+  td{
+    text-align: center;
+  }
+  td:last-child{
+    text-align: left;
+  }
+}
