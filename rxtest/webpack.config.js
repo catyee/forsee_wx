@@ -6,7 +6,9 @@ let files = fs.readdirSync('./src/js');
 let plugin = [];
 files.forEach((file) => {
    let chunk = file.slice(0,file.length -3);
-   console.log(chunk,'ccccccccccccc')
+   if (file.indexOf('common') > -1) {
+       return;
+   }
     let filename = file.slice(0, file.length-2) + 'html';
     let opts = {
         inject: 'body',
@@ -22,7 +24,7 @@ let config = {
     context: __dirname,
     entry: {
         index: './src/js/index.js',
-        test: './src/js/test.js'
+        test: ['babel-polyfill','./src/js/test.js']
     },
     output: {
         path: outputPath,
@@ -38,7 +40,7 @@ let config = {
                 },
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015',"stage-0"]
                 }
             }
 
@@ -55,6 +57,12 @@ let config = {
         inline: true,
         historyApiFallback: true,
         port: 8899,
+        proxy: {
+            '*': {
+                target: 'http://api.dianwutong.com',
+                changeOrigin: true
+            }
+        }
     }
 }
 module.exports = config;
