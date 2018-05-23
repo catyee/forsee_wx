@@ -60,28 +60,57 @@
              - HTTP/2 二进制协议 多工 数据流 客户端可以指定优先级 头信息压缩 服务端推送 只有在HTTPS环境才会生效
     
 4. 闭包理解 数据类型判断及转换
-    - 
+    - 在一个函数中返回另一个函数，从而在外部可以访问内部函数的值
+    - typeof 基本类型 instanceof 引用类型 constructor Object.prototype.toString.call().slice(8,-1)
+    ```
+        typeof ''; // string
+        typeof null; // object
+        typeof []; // object
+        typeof new Date(); // object
+        [] instanceof Array; // true
+        [] instanceof Object; // true
+        // instanceof 只能用来判断两个对象是否属于实例关系，而不能用来判断一个对象实例具体属于哪种类型
+
+    ```
 5. 事件循环机制 settimeout原理   
+
+    - js是单线程的，js任务可以分为两种，一种是同步任务，一种是异步任务，所有的同步任务都在主线程上执行，形成一个执行栈，主线程之外还有一个“任务队列”，只要异步任务有了运行结果，就在“任务队列”之中放置一个事件，一旦执行栈中的所有同步任务执行完毕，系统就会读取任务队列，看看里面有哪些事件，哪些对应的异步任务，于是结束等待状态，进入执行栈，开始执行
 6. storage和cookie
+    cookie发请求到服务端，大小限制较小，可以设置失效时间，不设置关闭浏览器丢失，localstorage不手动删除不会消失，sessionStorage关闭窗口丢失
 7. 移动端调试
+    
 8. 抓包工具 自动化工具
-9. 数组排序
+
+9. 数组排序*
+
 10. 数组常用方法 map和foreach 具体实现及区别
 11. 数组去重 
 12. split是把字符串切割成数组， join将数组结合成一个字符串
+
+
 13. 跨域的方式 jsonp的原理
+
+
 14. 模块化的理解
 15. 函数式编程理解
 16. rxjs用法 理解
+
 17. 继承方式 面向对象 预解释题目
-18. 浏览器兼容
-19. 手机端兼容
+
+
+
+18. 浏览器兼容 *****
+19. 手机端兼容 *****
 20. rem适配js
 21. pc端优化
 22. call，apply，bind
 23. 微信支付
 24. 小程序
 25. 火狐和谷歌区别 浏览器内核
+    - ie trident
+    - safari，chorme webkit
+    - opera presto之后webkit
+    - firefox Gecko
 26. 对象都是大括号吗 大括号都是对象吗
 27. svg，canvas，webgl，threejs
 28. 懒加载实现 不用插件
