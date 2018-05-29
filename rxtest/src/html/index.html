@@ -1,13 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <h6>test</h1>
-    <a href="test.html">test</a>
+    <div id="app">
+        {{message}}
+    </div>
+    <div id="app-2">
+        <!-- v-bind指令将这个元素节点的title特性和vue实例的message属性保持一致 -->
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+    </div>
+    <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+    <div id="app-5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+    <div id="app-6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+    <div id="app-7">
+        <ol>
+            <!-- 使用v-bind指令将代办项传到循环输出的每个组件中 -->
+            <!-- 我们需要为每个组件提供一个'key' -->
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+    <div id="app-8">
+        <p>{{foo}}</p>
+        <button v-on:click="foo = 'baz'">change it</button>
+    </div>
+    <div id="example">
+        {{a}}
+        <input type="text" v-model="a">
+    </div>
+    <button v-bind:disabled="isButtonDisabled" id="app-9">Button</button>
+    <div id="app-10">
+        <p>original message {{ message }}</p>
+        <p>Computed reversed message {{ reversedMessage  }}</p>
+    </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var aaa = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello'
+        }
+    })
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: '页面加载于' + new Date().toLocaleString()
+        }
+    })
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            seen: true
+        }
+    })
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    })
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: 'hello world!'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'hello'
+        }
+    })
+    // 在Vue里，一个组件本质上是一个拥有预定义选项的一个Vue实例
+    Vue.component('todo-item', {
+        props: ['todo'], // todo-item组件现在接受一个prop，类似一个自定义特性 子单元通过prop接口与父单元进行了良好的解耦
+        template: '<li>{{todo.text}}</li>'
+    })
+    var app7 = new Vue({
+        el: '#app-7',
+        data: {
+            groceryList: [
+                { id: 0, text: '蔬菜' },
+                { id: 1, text: '奶酪' },
+                { id: 2, text: '随便其它什么人吃的东西' }
+            ]
+        }
+    })
+    // Vue组件非常类似于自定义元素
+
+    var obj = {
+        foo: 'bar'
+    }
+    Object.freeze(obj);
+    new Vue({
+        el: '#app-8',
+        data: obj
+    })
+
+    // 除了数据属性，Vue实例还暴露了一些有用的实例属性和方法，它们都有前缀'$',以便与用户定义的属性区分开来
+
+    var data = {a:1};
+    var vm = new Vue({
+        el: '#example',
+        data: data
+    })
+    vm.$data === data; // true
+    vm.$el === document.getElementById('example');
+    vm.$watch('a',function(newValue,oldValue){
+        console.log(newValue+'newValue', oldValue+'oldValue')
+        console.log(newValue+oldValue)
+    })
+
+    // 每个Vue实例在被创建时都要经过一系列的初始化过程，例如，需要设置数据监听、编译模板、将实例挂载到DOM并在数据变化时更新DOM等。同时在这个过程中也会运行一些叫做生病周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。
+
+    // create钩子可以用来在一个实例被创建之后执行代码
+    new Vue({
+        data: {
+            a: 1
+        },
+        // 不要在选项属性或回调上使用箭头函数 因为箭头函数是和父级上下文绑定在一起的，this不会是如你所预期的Vue实例
+        // beforCreate-> created->beforeMount->
+        created: function() {
+            // this指向vm实例 
+            console.log('a is:' + this.a);
+        }
+    })
+    new Vue({
+        el: '#app-9',
+        data: {
+            isButtonDisabled: undefined
+        }
+    })
+    // 指令的职责是：当表达式的值发生改变时，将其产生的连带影响，响应式地作用于DOM
+    // v-bind指令可以用于响应式地更新HTML特性 <a v-bind:href="url">...</a> 这里href是参数，告知v-bind指令将该元素的href特性与表达式yrk的值绑定
+    // <a v-on:click="doSomthing">...</a>
+
+    // 修饰符是以半角句号'.'指明的特殊后缀，用于指出一个指令应该以特殊方式绑定
+    // <form v-on:submit.prevent="onSubmit">...</form> .prevent修饰符告诉v-on指令对于触发的事件调用event.preventDefault()
+
+    // <a v-bind:href="url">...</a> === <a :href="url">...</a> // v-bind 缩写
+    // <a v-on:click="doSomthing">...</a> === <a @click="doSomthing">...</a> // v-on 缩写
+
+    var vm = new Vue({
+        el: '#app-10',
+        data: {
+            message: 'hello'
+        },
+        computed: {
+            reversedMessage: function() {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+</script>
+
 </html>

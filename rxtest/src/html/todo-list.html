@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+     <!-- 注意这里的is="todo-item"属性，这种做法在使用DOM做模板时是十分必要的，因为在<ul>元素里
+                只有<li>元素会被看作有效内容。这样做实现的效果与<todo-item>相同，但是可以避开一些潜在的浏览器解析错误 -->
+    <div id="todo-list-example">
+        <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+        <ul>
+           
+            <!-- <span is="todo-item" v-for="(todo,index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index,1)"></span> -->
+            <todo-item 
+                v-for="(todo,index) in todos"
+                v-bind:title="todo.title" 
+                v-bind:key="todo.id"
+                v-on:remove="todos.splice(index,1)"
+            ></todo-item>
+        </ul>
+    </div>
+    <div id="example-2">
+        <!-- Vue提供了一些事件修饰符 .stop .prevent .capture .self .once .passive -->
+        <button v-on:click="greet">Greet</button>
+    </div>
+    <input 
+        id="checkbox"
+        type="checkbox"
+        v-model="toggle"
+        true-value="yes"
+        false-value="no"
+    >
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('todo-item', {
+            template: '\
+                <li>\
+                    {{title}}\
+                    <button v-on:click="$emit(\'remove\')">×</button>\
+                </li>',
+            props: ['title']
+        })
+        var vm = new Vue({
+            el: '#todo-list-example',
+            data: {
+                newTodoText: '',
+                todos: [
+                    {
+                        id: 1,
+                        title: 'Do the dishes',
+                    },
+                    {
+                        id: 2,
+                        title: 'Take out the trash',
+                    },
+                    {
+                        id: 3,
+                        title: 'Mow the lawn'
+                    }
+                ],
+                newTodoId: 4
+            },
+            methods: {
+                addNewTodo: function() {
+                    this.todos.push({
+                        id: this.newTodoId++,
+                        title: this.newTodoText
+                    })
+                    this.newTodoText = '';
+                }
+            }
+        })
+        var example2 = new Vue({
+            el: '#example-2',
+            data: {
+                name: 'Vue.js'
+            },
+            methods: {
+                greet: function(event) {
+                    alert('Hello'+this.name + '!');
+                    if(event) {
+                        alert(event.target.tagName)
+                    }
+                }
+            }
+        })
+       //  example2.greet(); 可以直接调用
+
+       var vm = new Vue({
+           el: '#checkbox',
+           data: {
+               toggle: ''
+           }
+       })
+    //    console.log(vm.toggle)
+    </script>
+</body>
+
+</html>
