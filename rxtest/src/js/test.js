@@ -15,5 +15,5 @@ setTimeout(function () {
 });
 Promise.resolve().then(function () {
     console.log('promise');
-  });
+  }); 
 

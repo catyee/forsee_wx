@@ -2,14 +2,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 let path = require('path');
 let fs = require('fs');
-let files = fs.readdirSync('./src/js');
+let files = fs.readdirSync('./src/html');
 let plugin = [];
 files.forEach((file) => {
-   let chunk = file.slice(0,file.length -3);
-   if (file.indexOf('common') > -1) {
-       return;
-   }
-    let filename = file.slice(0, file.length-2) + 'html';
+    let chunk = file.slice(0,file.length -5);
+    let filename = file;
+    console.log(chunk,'chunk')
     let opts = {
         inject: 'body',
         filename: filename,
@@ -24,7 +22,10 @@ let config = {
     context: __dirname,
     entry: {
         index: './src/js/index.js',
-        test: ['babel-polyfill','./src/js/test.js']
+        test: ['babel-polyfill','./src/js/test.js'],
+        'test-func': './src/js/testFunc.js',
+        'todo-list': './src/js/todoList.js',
+        'vue-test': './src/js/vueTest.js',
     },
     output: {
         path: outputPath,

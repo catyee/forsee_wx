@@ -60,7 +60,8 @@
              - HTTP/2 二进制协议 多工 数据流 客户端可以指定优先级 头信息压缩 服务端推送 只有在HTTPS环境才会生效
     
 4. 闭包理解        数据类型判断及转换
-    - 在一个函数中返回另一个函数，从而在外部可以访问内部函数的值
+    - 在一个函数中返回另一个函数，从而在外部可以访问内部函数的值 可以捕捉局部变量并一直保存下来
+        函数定义时的作用域在函数执行时仍然有效
     - typeof 基本类型 instanceof 引用类型 constructor Object.prototype.toString.call().slice(8,-1)
     ```
         typeof ''; // string
@@ -151,4 +152,45 @@
 63. proxy
 64. vue
 
+
+
+-----------
+1. 理解原型继承，函数，作用域
+
+    对象查询属性时，如果没有这个属性，那么会去这个属性的原型上查找，直到查找到一个原型是null的对象为止；
+    如果是设置属性不允许修改原型链
+
+    Object.getPrototypeOf(obj) 可以查询obj的原型
+    检测一个对象是否是另一个对象的原型 使用p.isPrototypeOf(o) // p是否是o的原型
+    var p = {x:1};
+    var o = Object.create(p);
+    p.isPrototypeOf(o); // true
+    Object.prototype.isProtoTypeOf(o); // true
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 熟悉es6，了解异步处理方案如Promise，async/await
+3. css3 less/sass flex css动画 适配
+4. wepy
+5. Vue/Angular 特性 不同理解 
+6. http方法和状态码语义 http请求头和响应头含义 ajax和json原理
+7. 排序和去重
+8. 事件
 
