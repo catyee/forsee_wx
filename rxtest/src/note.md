@@ -194,3 +194,18 @@
 7. 排序和去重
 8. 事件
 
+
+
+### 原型，类，继承
+### es6
+### jquery主攻题目
+### 事件部分
+### http部分
+### angular
+### vue
+### css3
+### 移动端
+### node
+### nginx
+### electron
+### webgl canvas
