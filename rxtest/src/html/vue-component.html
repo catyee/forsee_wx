@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="component-demo">
+        <button-counter title="boooooo" content="pigpigpig1"></button-counter>
+    </div>
+    <div id="blog-posts-events-demo">
+        <div :style="{fontSize: postFontSize + 'em'}">
+            <blog-post v-for="post in posts" 
+                        v-bind:key="post.id" 
+                        v-bind:post="post"
+                        v-on:enlarge-text="postFontSize += $event"
+                        >
+            </blog-post>
+            <custom-input
+                v-bind:value="searchText"
+                v-on:input="searchText = $event"></custom-input>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 组件是可复用的Vue实例，且带有一个名字，我们可以在一个通过new Vue创建的根实例(必须实例化)中，把这个组件作为自定义元素来使用
+        // 为了能在模板中使用，这些组件必须先注册以便Vue能够识别，两种注册方法：全局注册和局部注册
+        // 此下为全局注册
+        // 全局注册的组件可以用在其被注册之后的任何通过new Vue() 新创建的Vue实例，也包括其组件树中的所有子组件的模板中
+        Vue.component('button-counter', {
+            data: function () { // 组件的data选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝
+                return {
+                    count: 0
+                }
+            },
+            props: ['title', 'content'], // prop是可以在组件上注册的一些自定义特性，当一个值传递给一个prop特性的时候，它就变成了那个组件实例的一个属性,可以在组件上绑定属性，也可以使用v-bind来动态传递prop,注意：每个组件必须只有一个根元素。。
+            template: '<div><button v-on:click="count++">You clicked {{title}} {{ count }} times </button ><div v-html="content"></div></div>'
+        })
+
+        new Vue({
+            el: '#component-demo'
+        })
+
+        Vue.component('blog-post', {
+            props: ['post'],
+            // 通过事件向父组件传递信息 子组件发射事件，父组件监听事件
+            template: `<div class="blog-post">
+                            <h3>{{post.title}}</h3>
+                            <button v-on:click="$emit('enlarge-text',post.id)"> 
+                                Enlarge text
+                            </button>
+                            <div v-html="post.content"></div>
+                        </div>`
+        })
+        Vue.component('custom-input', {
+            props: ['value'], // 将input的value特性绑定到一个名叫value的prop上
+            template: `<input v-bind:value="value">
+                                v-on:input=$emit('input',$event.target.value)`
+        })
+        new Vue({
+            el: '#blog-posts-events-demo',
+            data: {
+                posts: [
+                    { id: 1, title: 'My journey with Vue', content: 1},
+                    { id: 2, title: 'Blogging with Vue',content: 2 },
+                    { id: 3, title: 'Why Vue is so fun',content: 3},
+                ],
+                postFontSize: 1
+            }
+        })
+    </script>
+</body>
+
+</html>

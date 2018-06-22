@@ -18,3 +18,29 @@ console.log('index.html333333333333')
 // cookie test
 document.cookie = 'test=test222'
 sessionStorage.setItem('test','1111111111111')
+var $ = require('jquery')
+var ctrl = {
+
+}
+ctrl.init = function() {
+    ctrl.sum();
+}
+$(function() {
+    ctrl.init();
+})
+
+ctrl.sum = function(num1,num2){
+    console.log('success')
+    return num1 + num2;
+}
+var a = 1;
+function outer() {
+    var a = 7;
+    inner();
+}
+function inner() {
+    console.log(this,333);
+    console.log(arguments.callee.caller);
+
+}
+outer();
