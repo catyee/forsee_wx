@@ -109,21 +109,20 @@ function Person() {
     this.name = 1;
 }
 var p1 = new Person();
-console.log(p1,'p1p1p1')
 Person.prototype.name = 2;
 
+console.log(p1.prototype)
 console.log(p1.prototype === Object);
-console.log(p1.__proto__,'__proto__')
-console.log(p1.__proto__ === Object)
-console.log(p1.__proto__.__proto__ === Object.prototype)
+console.log(p1.__proto__,'__proto__') 
+console.log(p1.__proto__ === Object) 
+console.log(p1.__proto__.__proto__ === Object.prototype) 
 var o = {
     name: 3
 }
-console.log(Person,'66666666666')
 Person.prototype = o;
 console.log(Person.prototype)
 console.log(Person.prototype.isPrototypeOf(p1),'8888888888');
 var p2 = new Person();
 console.log(p2.constructor)
 console.log(Person,'2222222222222')
-console.log(p2.constructor === Object)
+console.log(p2.constructor === Object) 
