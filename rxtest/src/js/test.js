@@ -2,7 +2,7 @@
 // var esTest = require('./common/es-test');
 // var ajaxTest = require('./common/ajax.test');
 // var arrayTest = require('./common/array.test');
-// require('./common/rm');
+require('./common/async.test');
 // console.log(1);
 // console.log(2);
 // setTimeout(function () {

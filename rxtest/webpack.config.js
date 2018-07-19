@@ -5,15 +5,15 @@ let fs = require('fs');
 let files = fs.readdirSync('./src/html');
 let plugin = [];
 files.forEach((file) => {
-    let chunk = file.slice(0,file.length -5);
+    let chunk = file.slice(0, file.length - 5);
     let filename = file;
-    console.log(chunk,'chunk')
+    console.log(chunk, 'chunk')
     let opts = {
         inject: 'body',
         filename: filename,
-        template: ('./src/html/'+filename),
+        template: ('./src/html/' + filename),
         chunksSortMode: 'manual',
-        chunks:  ['vendor',chunk],
+        chunks: ['vendor', chunk],
     }
     plugin.push(new HtmlWebpackPlugin(opts));
 })
@@ -22,7 +22,7 @@ let config = {
     context: __dirname,
     entry: {
         index: './src/js/index.js',
-        test: ['babel-polyfill','./src/js/test.js'],
+        test: ['babel-polyfill', './src/js/test.js'],
         'test-func': './src/js/testFunc.js',
         'todo-list': './src/js/todoList.js',
         'vue-test': './src/js/vueTest.js',
@@ -31,28 +31,31 @@ let config = {
         path: outputPath,
         filename: '[name].[hash].js'
     },
+    node: {
+        fs: "empty"
+    },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: function(path) {
+                exclude: function (path) {
                     let isNpmModule = !!path.match(/node_modules/);
                     return isNpmModule;
                 },
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015-nostrict',"stage-0"]
+                    presets: ['es2015-nostrict', "stage-0"]
                 }
             }
 
         ],
-       
+
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
         }),
-     
+
     ].concat(plugin),
     devServer: {
         inline: true,

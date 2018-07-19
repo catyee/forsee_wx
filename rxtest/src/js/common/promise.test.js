@@ -3,13 +3,25 @@ function Promise(fn) {
         value = null,
         callbacks = [];
     this.then = function (onFulfilled) {
-        if (state === 'pending') {
-            console.log('pending')
-            callbacks.push(onFulfilled);
-            return this;
+        return new Promise(function(resolve) {
+            handle({
+                onFulfilled: onFulfilled || null,
+                handle: resolve
+            })
+        });
+    };
+    function handle(callback) {
+        if(state === 'pending') {
+            callbacks.push(callback);
+            return;
         }
-        onFulfilled(value);
-        return this;
+        // 如果then中没有传递任何东西
+        if(!callback.onFulfilled){
+            callback.resolve(value);
+            return;
+        }
+        var ret = callback.onFulfilled(value);
+        callback.resolve(ret);
     }
     function resolve(newValue) {
         // reslove 执行时，会将状态设置为fulfiled，在此之后调用then添加的回调，都会立即执行。
@@ -23,16 +35,3 @@ function Promise(fn) {
     }
     fn(resolve)
 }
-new Promise(function (resolve) {
-    window.setTimeout(function() {
-        resolve(1)
-    },0)
-}).then(function (res) {
-    console.log(res)
-}).then(function (res) {
-    console.log(res + 10)
-}).then(function(res) {
-    window.setTimeout(function() {
-        console.log(res + 100)
-    })
-})
