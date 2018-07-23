@@ -1,20 +1,6 @@
-// import { esTest } from './common/es-test';
-// var esTest = require('./common/es-test');
-// var ajaxTest = require('./common/ajax.test');
-// var arrayTest = require('./common/array.test');
-require('./common/async.test');
-// console.log(1);
-// console.log(2);
-// setTimeout(function () {
-//   console.log('setTimeout1');
- 
-// });
-
-// setTimeout(function () {
-//   console.log('setTimeout2');
-// });
-// Promise.resolve().then(function () {
-//     console.log('promise');
-//   }); 
-
-  
+var THREE = require('three');
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth,window.innerHeight);
+document.body.appendChild(renderer.domElement)
